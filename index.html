@@ -23,8 +23,8 @@
     --muted:   #5a6a5a;
     --card:    rgba(255,248,230,0.92);
     --border:  rgba(26,82,118,0.15);
-    --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  }
+
+}
 
 - { margin:0; padding:0; box-sizing:border-box; }
 
@@ -37,11 +37,15 @@ overflow-x: hidden;
 position: relative;
 }
 
-/* Grain overlay */
+/* Grain overlay — safe inline approach */
 body::before {
 content:’’; position:fixed; inset:0; pointer-events:none; z-index:1000;
-background-image: var(–grain);
-opacity: 0.45;
+opacity: 0.03;
+background-image: repeating-linear-gradient(
+0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px
+), repeating-linear-gradient(
+90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px
+);
 }
 
 /* ── STORM BANNER ── */
