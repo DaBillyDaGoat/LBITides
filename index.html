@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,188 +9,188 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-font-family: ‘Source Sans 3’, sans-serif;
-background: #ffffff;
-color: #111111;
+  font-family: 'Source Sans 3', sans-serif;
+  background: #ffffff;
+  color: #111111;
 }
 
 /* STORM BANNER */
 #stormBanner {
-display: none;
-position: sticky; top: 0; z-index: 99;
-background: #b02020; color: #fff;
-text-align: center; padding: 0.65rem 3rem;
-font-size: 0.78rem; font-weight: 700;
-letter-spacing: 0.08em; text-transform: uppercase;
+  display: none;
+  position: sticky; top: 0; z-index: 99;
+  background: #b02020; color: #fff;
+  text-align: center; padding: 0.65rem 3rem;
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
 }
 #stormBanner.watch { background: #a04010; }
 #stormBanner.advisory { background: #7a5800; }
 .banner-close {
-position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
-background: none; border: none; color: #fff; font-size: 1rem; cursor: pointer;
+  position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: #fff; font-size: 1rem; cursor: pointer;
 }
 
 /* HEADER */
 header {
-text-align: center;
-padding: 2.25rem 1rem 1.75rem;
-border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+  padding: 2.25rem 1rem 1.75rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .flag-center {
-display: flex;
-justify-content: center;
-margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .site-title {
-font-family: ‘IM Fell English’, serif;
-font-size: clamp(2.2rem, 6vw, 3.4rem);
-font-weight: 400;
-color: #111;
-letter-spacing: 0.02em;
-line-height: 1;
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 400;
+  color: #111;
+  letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .site-sub {
-font-family: ‘Source Sans 3’, sans-serif;
-font-size: 0.68rem;
-font-weight: 600;
-letter-spacing: 0.28em;
-text-transform: uppercase;
-color: #999;
-margin-top: 0.4rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #999;
+  margin-top: 0.4rem;
 }
 
 #current-date {
-font-size: 0.68rem;
-font-weight: 400;
-letter-spacing: 0.12em;
-color: #bbb;
-margin-top: 0.3rem;
-text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #bbb;
+  margin-top: 0.3rem;
+  text-transform: uppercase;
 }
 
 /* MAIN */
 main {
-max-width: 760px;
-margin: 0 auto;
-padding: 1.75rem 1rem 5rem;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 5rem;
 }
 
 /* SECTION LABEL */
 .slabel {
-font-family: ‘Source Sans 3’, sans-serif;
-font-size: 0.62rem;
-font-weight: 700;
-letter-spacing: 0.24em;
-text-transform: uppercase;
-color: #aaa;
-margin: 1.75rem 0 0.65rem;
-padding-bottom: 0.4rem;
-border-bottom: 1px solid #ebebeb;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin: 1.75rem 0 0.65rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #ebebeb;
 }
 
 /* CARD */
 .card {
-background: #fff;
-border: 1px solid #e8e8e8;
-border-radius: 10px;
-padding: 1.2rem;
-margin-bottom: 0.85rem;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 0.85rem;
 }
 
 /* SUMMARY */
 .summary {
-background: #fafafa;
-border: 1px solid #e8e8e8;
-border-radius: 10px;
-padding: 1.25rem 1.4rem;
-margin-bottom: 0.75rem;
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 0.75rem;
 }
 .summary-lbl {
-font-size: 0.6rem; font-weight: 700;
-letter-spacing: 0.22em; text-transform: uppercase;
-color: #bbb; margin-bottom: 0.35rem;
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #bbb; margin-bottom: 0.35rem;
 }
 .summary-txt {
-font-family: ‘Libre Baskerville’, serif;
-font-size: 1.05rem; color: #111; line-height: 1.7;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.05rem; color: #111; line-height: 1.7;
 }
 .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.7rem; }
 .tag {
-background: #f0f0f0; border: 1px solid #e0e0e0;
-color: #666; border-radius: 999px;
-padding: 0.16rem 0.6rem;
-font-size: 0.6rem; font-weight: 600;
-letter-spacing: 0.05em; text-transform: uppercase;
+  background: #f0f0f0; border: 1px solid #e0e0e0;
+  color: #666; border-radius: 999px;
+  padding: 0.16rem 0.6rem;
+  font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
 }
 
 /* TIDE PILLS */
 .tide-pills { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.65rem; margin-bottom: 1.1rem; }
 .tide-pill {
-background: #fafafa; border: 1px solid #e0e0e0;
-border-radius: 8px; padding: 1rem 0.8rem; text-align: center;
+  background: #fafafa; border: 1px solid #e0e0e0;
+  border-radius: 8px; padding: 1rem 0.8rem; text-align: center;
 }
 .tide-pill.low { background: #f6f9fc; border-color: #d5e3ef; }
 .tp-lbl {
-font-size: 0.58rem; font-weight: 700;
-letter-spacing: 0.15em; text-transform: uppercase;
-color: #aaa; margin-bottom: 0.25rem;
+  font-size: 0.58rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: #aaa; margin-bottom: 0.25rem;
 }
 .tp-time {
-font-family: ‘Libre Baskerville’, serif;
-font-size: 1.3rem; font-weight: 700; color: #111;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.3rem; font-weight: 700; color: #111;
 }
 .tp-ht { font-size: 0.72rem; font-weight: 600; color: #777; margin-top: 0.18rem; }
 
 /* TIMELINE */
 .tl-outer { position: relative; height: 48px; margin-bottom: 0.4rem; }
 .tl-line {
-position: absolute; top: 50%; left: 0; right: 0;
-height: 1px; background: #e0e0e0; transform: translateY(-50%);
+  position: absolute; top: 50%; left: 0; right: 0;
+  height: 1px; background: #e0e0e0; transform: translateY(-50%);
 }
 .tm {
-position: absolute; top: 50%;
-transform: translate(-50%, -50%);
-display: flex; flex-direction: column; align-items: center;
+  position: absolute; top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center;
 }
 .tm.above { flex-direction: column-reverse; }
 .tm-dot {
-width: 9px; height: 9px; border-radius: 50%;
-background: #333; border: 2px solid #fff;
-box-shadow: 0 0 0 1px #ddd; flex-shrink: 0;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: #333; border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #ddd; flex-shrink: 0;
 }
 .tm.low .tm-dot { background: #aaa; }
 .tm-lbl {
-font-size: 0.52rem; font-weight: 600; color: #888;
-white-space: nowrap; text-align: center; line-height: 1.3; margin: 2px 0;
+  font-size: 0.52rem; font-weight: 600; color: #888;
+  white-space: nowrap; text-align: center; line-height: 1.3; margin: 2px 0;
 }
 .tl-hours {
-display: flex; justify-content: space-between;
-font-size: 0.54rem; font-weight: 600; color: #ccc;
-letter-spacing: 0.04em; padding: 0 2px;
+  display: flex; justify-content: space-between;
+  font-size: 0.54rem; font-weight: 600; color: #ccc;
+  letter-spacing: 0.04em; padding: 0 2px;
 }
 
 /* STATS */
 .stats-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
-gap: 0.55rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
+  gap: 0.55rem;
 }
 .sblock {
-background: #fafafa; border: 1px solid #e8e8e8;
-border-radius: 8px; padding: 0.8rem 0.55rem; text-align: center;
+  background: #fafafa; border: 1px solid #e8e8e8;
+  border-radius: 8px; padding: 0.8rem 0.55rem; text-align: center;
 }
 .sb-ico { font-size: 1.25rem; margin-bottom: 0.18rem; line-height: 1; }
 .sb-lbl {
-font-size: 0.52rem; font-weight: 700;
-letter-spacing: 0.13em; text-transform: uppercase;
-color: #bbb; margin-bottom: 0.08rem;
+  font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: #bbb; margin-bottom: 0.08rem;
 }
 .sb-val {
-font-family: ‘Libre Baskerville’, serif;
-font-size: 1.2rem; font-weight: 700; color: #111; line-height: 1;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem; font-weight: 700; color: #111; line-height: 1;
 }
 .sb-unit { font-size: 0.58rem; font-weight: 600; color: #bbb; }
 
@@ -200,104 +199,110 @@ font-size: 1.2rem; font-weight: 700; color: #111; line-height: 1;
 .moon-ico { font-size: 2.6rem; line-height: 1; }
 .moon-info { flex: 1; min-width: 120px; }
 .moon-name {
-font-family: ‘Libre Baskerville’, serif;
-font-size: 1.05rem; font-weight: 700; color: #111;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.05rem; font-weight: 700; color: #111;
 }
 .moon-det { font-size: 0.7rem; font-weight: 600; color: #999; margin-top: 0.1rem; }
 .moon-bar-wrap { flex: 1.5; min-width: 150px; }
 .moon-bar-lbl {
-font-size: 0.52rem; font-weight: 700;
-letter-spacing: 0.14em; text-transform: uppercase;
-color: #bbb; margin-bottom: 0.32rem;
+  font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #bbb; margin-bottom: 0.32rem;
 }
 .moon-bar { height: 4px; background: #ebebeb; border-radius: 999px; overflow: hidden; }
 .moon-fill { height: 100%; background: #333; border-radius: 999px; }
 .moon-day { font-size: 0.56rem; font-weight: 600; color: #ccc; text-align: right; margin-top: 0.28rem; }
 
 /* LINKS */
+
+.cams-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
 .links-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
-gap: 0.65rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
+  gap: 0.65rem;
 }
 .link-card {
-background: #fafafa; border: 1px solid #e8e8e8;
-border-radius: 10px; padding: 1rem 0.8rem;
-text-align: center; text-decoration: none; display: block;
-transition: background 0.15s, border-color 0.15s;
+  background: #fafafa; border: 1px solid #e8e8e8;
+  border-radius: 10px; padding: 1rem 0.8rem;
+  text-align: center; text-decoration: none; display: block;
+  transition: background 0.15s, border-color 0.15s;
 }
 .link-card:hover { background: #f2f2f2; border-color: #ccc; }
 .link-ico { font-size: 1.75rem; margin-bottom: 0.28rem; line-height: 1; }
 .link-name {
-font-family: ‘Libre Baskerville’, serif;
-font-size: 0.88rem; font-weight: 700; color: #111;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.88rem; font-weight: 700; color: #111;
 }
 .link-sub { font-size: 0.6rem; font-weight: 600; color: #bbb; margin-top: 0.1rem; }
 
 /* 7-DAY */
 .forecast-hdr {
-font-family: ‘IM Fell English’, serif;
-font-size: 1.5rem; font-weight: 400; color: #111;
-margin: 2.25rem 0 0.9rem;
-padding-bottom: 0.5rem;
-border-bottom: 1px solid #e0e0e0;
+  font-family: 'IM Fell English', serif;
+  font-size: 1.5rem; font-weight: 400; color: #111;
+  margin: 2.25rem 0 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 /* DAY CARD */
 .day-card {
-background: #fff; border: 1px solid #e8e8e8;
-border-radius: 10px; padding: 1rem 1.1rem 1.05rem;
-margin-bottom: 0.7rem;
+  background: #fff; border: 1px solid #e8e8e8;
+  border-radius: 10px; padding: 1rem 1.1rem 1.05rem;
+  margin-bottom: 0.7rem;
 }
 .day-card.today { border-color: #aaa; }
 .day-hdr {
-display: flex; align-items: baseline; justify-content: space-between;
-margin-bottom: 0.75rem; padding-bottom: 0.45rem;
-border-bottom: 1px solid #f0f0f0;
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 0.75rem; padding-bottom: 0.45rem;
+  border-bottom: 1px solid #f0f0f0;
 }
 .day-name {
-font-family: ‘Libre Baskerville’, serif;
-font-size: 1rem; font-weight: 700; color: #111;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem; font-weight: 700; color: #111;
 }
 .day-dt {
-font-size: 0.62rem; font-weight: 600; color: #bbb;
-letter-spacing: 0.07em; text-transform: uppercase;
+  font-size: 0.62rem; font-weight: 600; color: #bbb;
+  letter-spacing: 0.07em; text-transform: uppercase;
 }
 .day-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
-gap: 0.38rem; margin-bottom: 0.55rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
+  gap: 0.38rem; margin-bottom: 0.55rem;
 }
 .dstat {
-background: #fafafa; border: 1px solid #ebebeb;
-border-radius: 7px; padding: 0.44rem 0.38rem; text-align: center;
+  background: #fafafa; border: 1px solid #ebebeb;
+  border-radius: 7px; padding: 0.44rem 0.38rem; text-align: center;
 }
 .dl { font-size: 0.49rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #ccc; margin-bottom: 0.06rem; }
-.dv { font-family: ‘Libre Baskerville’, serif; font-size: 0.9rem; font-weight: 700; color: #111; line-height: 1.1; }
+.dv { font-family: 'Libre Baskerville', serif; font-size: 0.9rem; font-weight: 700; color: #111; line-height: 1.1; }
 .du { font-size: 0.48rem; font-weight: 600; color: #ccc; }
 .day-tides { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .mpill {
-flex: 1; min-width: 76px;
-background: #fafafa; border: 1px solid #e8e8e8;
-border-radius: 7px; padding: 0.4rem 0.45rem; text-align: center;
+  flex: 1; min-width: 76px;
+  background: #fafafa; border: 1px solid #e8e8e8;
+  border-radius: 7px; padding: 0.4rem 0.45rem; text-align: center;
 }
 .mpill.low { background: #f6f9fc; border-color: #d5e3ef; }
 .ml { font-size: 0.49rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #ccc; }
-.mt { font-family: ‘Libre Baskerville’, serif; font-size: 0.9rem; font-weight: 700; color: #111; }
+.mt { font-family: 'Libre Baskerville', serif; font-size: 0.9rem; font-weight: 700; color: #111; }
 .mh { font-size: 0.52rem; font-weight: 600; color: #bbb; }
 
 /* FOOTER */
 footer {
-background: #fafafa; border-top: 1px solid #e8e8e8;
-text-align: center; padding: 2rem 1rem;
-font-size: 0.68rem; color: #ccc;
-letter-spacing: 0.06em; line-height: 2.2;
+  background: #fafafa; border-top: 1px solid #e8e8e8;
+  text-align: center; padding: 2rem 1rem;
+  font-size: 0.68rem; color: #ccc;
+  letter-spacing: 0.06em; line-height: 2.2;
 }
 footer a { color: #aaa; text-decoration: none; }
 
 .loading { font-size: 0.8rem; color: #ccc; padding: 0.4rem 0; }
 </style>
-
 </head>
 <body>
 
@@ -379,31 +384,100 @@ footer a { color: #aaa; text-decoration: none; }
   <div class="forecast-hdr">7-Day Forecast</div>
     <div id="forecastDays"></div>
 
-  <div class="slabel">&#x1F3DD;&#xFE0F; LBI Essentials</div>
-  <div class="links-grid">
-    <a href="https://www.thesandpaper.net" class="link-card" target="_blank">
-      <div class="link-ico">&#x1F4F0;</div>
-      <div class="link-name">The Sand Paper</div>
-      <div class="link-sub">Local LBI news</div>
+  <div class="slabel">📹 Live Cams</div>
+  <div class="cams-grid">
+    <a href="https://www.joyislbi.com/webcam" class="link-card" target="_blank">
+      <div class="link-ico">🐬</div>
+      <div class="link-name">Barnegat Inlet</div>
+      <div class="link-sub">Joy LBI · Live HD</div>
     </a>
-    <a href="https://ferrarasislandbakery.com" class="link-card" target="_blank">
-      <div class="link-ico">&#x1F369;</div>
-      <div class="link-name">Ferrara&#8217;s Bakery</div>
-      <div class="link-sub">Island baked goods</div>
+    <a href="https://www.harveycedars.org/cn/webpage.cfm?tpid=16942" class="link-card" target="_blank">
+      <div class="link-ico">⛱️</div>
+      <div class="link-name">Harvey Cedars</div>
+      <div class="link-sub">Ocean · bay · blvd</div>
     </a>
-    <a href="https://fantasyislandlbi.com" class="link-card" target="_blank">
-      <div class="link-ico">&#x1F3A1;</div>
-      <div class="link-name">Fantasy Island</div>
-      <div class="link-sub">Rides &amp; amusements</div>
-    </a>
-    <a href="https://www.longbeachtownship.com" class="link-card" target="_blank">
-      <div class="link-ico">&#x1F6DF;</div>
-      <div class="link-name">LB Township</div>
-      <div class="link-sub">Town info &amp; resources</div>
+    <a href="https://camstreamer.com/live/stream/43500-long-beach-township-new-jersey-usa" class="link-card" target="_blank">
+      <div class="link-ico">🛥️</div>
+      <div class="link-name">LBT Field Station</div>
+      <div class="link-sub">Bay · Clam Cove PTZ</div>
     </a>
   </div>
 
-/main>
+  <div class="slabel">🏝️ LBI Essentials</div>
+  <div class="links-grid">
+    <a href="https://lbtbp.com" class="link-card" target="_blank">
+      <div class="link-ico">🛟</div>
+      <div class="link-name">LBTBP</div>
+      <div class="link-sub">Beach patrol</div>
+    </a>
+    <a href="https://www.longbeachtownship.com" class="link-card" target="_blank">
+      <div class="link-ico">🛃</div>
+      <div class="link-name">LB Township</div>
+      <div class="link-sub">Town info &amp; resources</div>
+    </a>
+    <a href="https://www.thesandpaper.net" class="link-card" target="_blank">
+      <div class="link-ico">📰</div>
+      <div class="link-name">The Sand Paper</div>
+      <div class="link-sub">Local LBI news</div>
+    </a>
+    <a href="https://tracker.lbishuttle.com" class="link-card" target="_blank">
+      <div class="link-ico">🚍</div>
+      <div class="link-name">LBI Shuttle</div>
+      <div class="link-sub">Live tracker</div>
+    </a>
+    <a href="https://ferrarasislandbakery.com" class="link-card" target="_blank">
+      <div class="link-ico">🍩</div>
+      <div class="link-name">Ferrara's Bakery</div>
+      <div class="link-sub">Island baked goods</div>
+    </a>
+    <a href="https://antiquevillagewestcreek.com" class="link-card" target="_blank">
+      <div class="link-ico">🗝️</div>
+      <div class="link-name">Antique Village</div>
+      <div class="link-sub">West Creek antiques</div>
+    </a>
+    <a href="https://fantasyislandlbi.com" class="link-card" target="_blank">
+      <div class="link-ico">🎡</div>
+      <div class="link-name">Fantasy Island</div>
+      <div class="link-sub">Rides &amp; amusements</div>
+    </a>
+    <a href="https://www.claudsphotos.com" class="link-card" target="_blank">
+      <div class="link-ico">📸</div>
+      <div class="link-name">Claud's Photos</div>
+      <div class="link-sub">LBI photography</div>
+    </a>
+    <a href="https://www.sandyavocadosurf.com" class="link-card" target="_blank">
+      <div class="link-ico">🥑</div>
+      <div class="link-name">Sandy Avocado</div>
+      <div class="link-sub">Surf shop</div>
+    </a>
+    <a href="https://www.skipperdipper.com" class="link-card" target="_blank">
+      <div class="link-ico">🍦</div>
+      <div class="link-name">Skipper Dipper</div>
+      <div class="link-sub">Ice cream</div>
+    </a>
+    <a href="https://www.birdandbettys.com/food-menu" class="link-card" target="_blank">
+      <div class="link-ico">🎶</div>
+      <div class="link-name">Bird &amp; Betty's</div>
+      <div class="link-sub">Food &amp; music</div>
+    </a>
+    <a href="https://www.daddyolbi.com" class="link-card" target="_blank">
+      <div class="link-ico">⭕️</div>
+      <div class="link-name">Daddy O</div>
+      <div class="link-sub">Hotel &amp; bar</div>
+    </a>
+    <a href="https://www.fariassurf.com" class="link-card" target="_blank">
+      <div class="link-ico">👙</div>
+      <div class="link-name">Faria's Surf</div>
+      <div class="link-sub">Surf &amp; beach gear</div>
+    </a>
+    <a href="https://jettylife.com" class="link-card" target="_blank">
+      <div class="link-ico">👕</div>
+      <div class="link-name">Jetty Life</div>
+      <div class="link-sub">Coastal apparel</div>
+    </a>
+  </div>
+
+</main>
 
 <footer>
   <div>Tides: NOAA Tides &amp; Currents &middot; Weather: Open-Meteo &middot; Alerts: NWS</div>
@@ -648,6 +722,5 @@ async function init() {
 
 init();
 </script>
-
 </body>
 </html>
