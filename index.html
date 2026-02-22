@@ -12,7 +12,7 @@
     --sunset1: #f4a32a;
     --sunset2: #e8682a;
     --sunset3: #c94b2a;
-    --sand:    #f5e6c8;
+    --sand:    #e8d9b8;
     --sand2:   #ede0b8;
     --ocean:   #1a5276;
     --ocean2:  #0e3a52;
@@ -21,8 +21,8 @@
     --text2:   #2c3e50;
     --label:   #1a3a4a;
     --muted:   #5a6a5a;
-    --card:    rgba(255,248,230,0.92);
-    --border:  rgba(26,82,118,0.15);
+    --card:    #0e3a52;
+    --border:  rgba(255,255,255,0.12);
 
 }
 
@@ -148,7 +148,7 @@ max-width: 860px; margin: 0 auto;
 
 /* ── AD ── */
 .ad-unit, .ad-divider {
-background: rgba(255,255,255,0.4);
+background: rgba(14,58,82,0.15);
 border: 1.5px dashed rgba(26,82,118,0.2);
 border-radius: 8px;
 text-align: center; color: var(–muted);
@@ -171,10 +171,10 @@ border: 1px solid var(–border);
 
 .card-title {
 font-family: ‘Abril Fatface’, serif;
-font-size: 1rem; color: var(–ocean2);
+font-size: 1rem; color: #fff;
 margin-bottom: 1rem;
 display: flex; align-items: center; gap: 0.45rem;
-border-bottom: 2px solid rgba(26,82,118,0.12);
+border-bottom: 2px solid rgba(255,255,255,0.15);
 padding-bottom: 0.6rem;
 letter-spacing: 0.02em;
 }
@@ -227,14 +227,14 @@ box-shadow: 2px 3px 0 rgba(0,0,0,0.12);
 .timeline-bar {
 position: relative;
 height: 48px;
-background: linear-gradient(90deg, rgba(26,82,118,0.08), rgba(26,82,118,0.12), rgba(26,82,118,0.08));
+background: rgba(255,255,255,0.08);
 border-radius: 999px;
 margin-bottom: 0.5rem;
 overflow: visible;
 }
 .timeline-track {
 position: absolute; top: 50%; left: 0; right: 0;
-height: 3px; background: rgba(26,82,118,0.2);
+height: 3px; background: rgba(255,255,255,0.25);
 transform: translateY(-50%); border-radius:999px;
 }
 .timeline-marker {
@@ -251,13 +251,13 @@ box-shadow: 0 1px 4px rgba(0,0,0,0.2);
 .timeline-marker.low  .tm-dot { background: #2471a3; }
 .timeline-marker .tm-label {
 font-size: 0.58rem; font-weight: 700; letter-spacing: 0.05em;
-color: var(–label); white-space: nowrap; margin-top: 3px;
+color: #fff; white-space: nowrap; margin-top: 3px;
 text-transform: uppercase;
 }
 .timeline-marker.above .tm-label { margin-top: 0; margin-bottom: 3px; order: -1; }
 .timeline-hour-labels {
 display: flex; justify-content: space-between;
-font-size: 0.6rem; color: var(–label); font-weight: 700;
+font-size: 0.6rem; color: #a8d4ee; font-weight: 700;
 letter-spacing: 0.04em; margin-top: 0.2rem;
 padding: 0 0.25rem;
 }
@@ -278,13 +278,13 @@ box-shadow: 2px 3px 0 rgba(0,0,0,0.15);
 .moon-row { display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
 .moon-em { font-size:3.2rem; line-height:1; }
 .moon-info { min-width:130px; }
-.moon-info .m-phase { font-family:‘Abril Fatface’,serif; font-size:1.1rem; color:var(–ocean2); }
-.moon-info .m-detail { font-size:0.78rem; color:var(–text2); font-weight:700; margin-top:0.15rem; letter-spacing:0.04em; }
+.moon-info .m-phase { font-family:‘Abril Fatface’,serif; font-size:1.1rem; color:#fff; }
+.moon-info .m-detail { font-size:0.78rem; color:#a8d4ee; font-weight:700; margin-top:0.15rem; letter-spacing:0.04em; }
 .moon-bar-wrap { flex:1; min-width:160px; }
-.moon-bar-lbl { font-size:0.58rem; letter-spacing:0.16em; text-transform:uppercase; color:var(–label); font-weight:700; margin-bottom:0.35rem; }
-.moon-bar { height:8px; background:rgba(26,82,118,0.12); border-radius:999px; overflow:hidden; }
+.moon-bar-lbl { font-size:0.58rem; letter-spacing:0.16em; text-transform:uppercase; color:var(–sunset1); font-weight:700; margin-bottom:0.35rem; }
+.moon-bar { height:8px; background:rgba(255,255,255,0.15); border-radius:999px; overflow:hidden; }
 .moon-bar-fill { height:100%; background:linear-gradient(90deg,var(–sunset1),#ffd24d); border-radius:999px; }
-.moon-day-label { font-size:0.62rem; color:var(–text2); font-weight:700; margin-top:0.3rem; text-align:right; letter-spacing:0.04em; }
+.moon-day-label { font-size:0.62rem; color:#a8d4ee; font-weight:700; margin-top:0.3rem; text-align:right; letter-spacing:0.04em; }
 
 /* ── SECTION HEADING ── */
 .section-heading {
@@ -301,14 +301,14 @@ letter-spacing: 0.01em;
 .day-card {
 background: var(–card); border-radius:12px;
 padding:1.1rem 1.25rem 1.25rem; margin-bottom:0.85rem;
-border:1px solid var(–border);
+border:1px solid rgba(255,255,255,0.12);
 box-shadow: 2px 3px 0 rgba(26,82,118,0.07), 0 4px 12px rgba(0,0,0,0.05);
 }
 .day-card.today-card { border-color: var(–ocean2); border-width:2px; }
 
 .day-header { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:0.85rem; }
-.day-name-big { font-family:‘Abril Fatface’,serif; font-size:1.15rem; color:var(–ocean2); }
-.day-date-small { font-size:0.7rem; color:var(–text2); font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }
+.day-name-big { font-family:‘Abril Fatface’,serif; font-size:1.15rem; color:#fff; }
+.day-date-small { font-size:0.7rem; color:#a8d4ee; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }
 
 .day-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(95px,1fr)); gap:0.5rem; margin-bottom:0.65rem; }
 .day-stat {
