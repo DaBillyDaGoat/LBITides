@@ -47,15 +47,16 @@ opacity: 0.45;
 /* ── STORM BANNER ── */
 #stormBanner {
 display:none; position:sticky; top:0; z-index:200;
-padding:0.75rem 3rem 0.75rem 1.25rem;
-font-family:‘Lato’,sans-serif; font-size:0.85rem; font-weight:700;
-letter-spacing:0.06em; text-align:center; color:#fff;
-background: var(–sunset3);
-box-shadow:0 3px 15px rgba(0,0,0,0.35);
+padding:0.85rem 3rem 0.85rem 1.25rem;
+font-family:‘Lato’,sans-serif; font-size:0.9rem; font-weight:900;
+letter-spacing:0.08em; text-align:center; color:#fff;
+background: #c0392b;
+box-shadow:0 4px 20px rgba(0,0,0,0.5);
 text-transform: uppercase;
+text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
-#stormBanner.watch    { background: var(–sunset2); }
-#stormBanner.advisory { background: var(–sunset1); color: var(–text2); }
+#stormBanner.watch    { background: #d35400; }
+#stormBanner.advisory { background: #b7770d; color:#fff; }
 .banner-close { position:absolute; right:1rem; top:50%; transform:translateY(-50%); cursor:pointer; background:none; border:none; color:inherit; font-size:1.2rem; opacity:0.75; }
 
 /* ── HEADER ── */
@@ -271,14 +272,14 @@ padding: 0 0.25rem;
 /* ── STATS GRID ── */
 .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:0.65rem; }
 .stat-block {
-background: rgba(255,255,255,0.7); border:1px solid rgba(26,82,118,0.1);
+background: var(–ocean2); border:1px solid rgba(255,255,255,0.08);
 border-radius:10px; padding:0.85rem 0.7rem; text-align:center;
-box-shadow: 1px 2px 0 rgba(26,82,118,0.06);
+box-shadow: 2px 3px 0 rgba(0,0,0,0.15);
 }
 .stat-block .sb-icon { font-size:1.3rem; margin-bottom:0.2rem; }
-.stat-block .sb-label { font-size:0.58rem; letter-spacing:0.16em; text-transform:uppercase; color:var(–label); font-weight:700; margin-bottom:0.15rem; }
-.stat-block .sb-value { font-family:‘Abril Fatface’,serif; font-size:1.25rem; color:var(–ocean2); }
-.stat-block .sb-unit { font-size:0.62rem; color:var(–text2); font-weight:700; }
+.stat-block .sb-label { font-size:0.58rem; letter-spacing:0.16em; text-transform:uppercase; color:var(–sunset1); font-weight:700; margin-bottom:0.15rem; }
+.stat-block .sb-value { font-family:‘Abril Fatface’,serif; font-size:1.25rem; color:#fff; }
+.stat-block .sb-unit { font-size:0.62rem; color:#b8d4e8; font-weight:700; }
 
 /* ── MOON ── */
 .moon-row { display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
@@ -318,12 +319,13 @@ box-shadow: 2px 3px 0 rgba(26,82,118,0.07), 0 4px 12px rgba(0,0,0,0.05);
 
 .day-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(95px,1fr)); gap:0.5rem; margin-bottom:0.65rem; }
 .day-stat {
-background:rgba(255,255,255,0.6); border:1px solid rgba(26,82,118,0.08);
+background: var(–ocean2); border:1px solid rgba(255,255,255,0.08);
 border-radius:9px; padding:0.55rem 0.5rem; text-align:center;
+box-shadow: 1px 2px 0 rgba(0,0,0,0.12);
 }
-.day-stat .ds-lbl { font-size:0.54rem; letter-spacing:0.15em; text-transform:uppercase; color:var(–label); font-weight:700; margin-bottom:0.12rem; }
-.day-stat .ds-val { font-family:‘Abril Fatface’,serif; font-size:1rem; color:var(–ocean2); }
-.day-stat .ds-unit { font-size:0.58rem; color:var(–text2); font-weight:700; }
+.day-stat .ds-lbl { font-size:0.54rem; letter-spacing:0.15em; text-transform:uppercase; color:var(–sunset1); font-weight:700; margin-bottom:0.12rem; }
+.day-stat .ds-val { font-family:‘Abril Fatface’,serif; font-size:1rem; color:#fff; }
+.day-stat .ds-unit { font-size:0.58rem; color:#b8d4e8; font-weight:700; }
 
 .day-tides { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem; }
 .mini-pill {
@@ -440,7 +442,7 @@ async function loadAlerts(){
   try{
     const r=await fetch(`https://api.weather.gov/alerts/active?point=${LAT},${LNG}&status=actual`);
     const d=await r.json();
-    const kw=['winter storm','blizzard','hurricane','tropical storm','flash flood','coastal flood','high wind','tornado'];
+    const kw=['winter storm','winter weather','blizzard','hurricane','tropical storm','flash flood','coastal flood','high wind','tornado','freeze','ice storm','nor\'easter','special marine','small craft','gale','storm warning','dense fog','heavy snow'];
     const hits=(d.features||[]).filter(a=>kw.some(k=>(a.properties.event||'').toLowerCase().includes(k)));
     if(!hits.length)return;
     const p=hits[0].properties, ev=(p.event||'').toLowerCase();
