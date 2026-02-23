@@ -12,12 +12,14 @@
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root { color-scheme: light; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 body {
   font-family: 'Source Sans 3', sans-serif;
   background: #ffffff !important;
   color: #111111;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* STORM BANNER */
@@ -29,174 +31,177 @@ body {
   font-size: 0.78rem; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase;
 }
-#stormBanner.watch { background: #dd6600 !important; }
-#stormBanner.advisory { background: #cc9900 !important; }
+#stormBanner.watch   { background: #dd6600 !important; }
+#stormBanner.advisory{ background: #cc9900 !important; }
 .banner-close {
   position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
-  background: none; border: none; color: #fff; font-size: 1rem; cursor: pointer;
+  background: none; border: none; color: #fff; font-size: 1.1rem; cursor: pointer;
+  padding: 0.5rem;
 }
 
 /* IOS PROMPT */
 #iosPrompt {
   display: none;
   background: #f8f8f8; border-bottom: 1px solid #e0e0e0;
-  padding: 0.75rem 1rem;
-  font-size: 0.72rem; color: #555;
-  text-align: center; position: relative;
+  padding: 0.85rem 3rem 0.85rem 1rem;
+  font-size: 0.74rem; color: #555;
+  text-align: center; position: relative; line-height: 1.5;
 }
 #iosPrompt strong { color: #111; }
 .ios-close {
   position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%);
-  background: none; border: none; font-size: 1rem; color: #aaa; cursor: pointer;
+  background: none; border: none; font-size: 1.2rem; color: #aaa; cursor: pointer;
+  padding: 0.5rem;
 }
 
 /* HEADER */
 header {
   text-align: center;
-  padding: 2.25rem 1rem 1.75rem;
+  padding: 1.75rem 1rem 1.4rem;
   border-bottom: 1px solid #e0e0e0;
   background: #fff !important;
 }
-.flag-center { display: flex; justify-content: center; margin-bottom: 1rem; }
+.flag-center { display: flex; justify-content: center; margin-bottom: 0.85rem; }
 .site-title {
   font-family: 'IM Fell English', serif;
-  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-size: clamp(2rem, 8vw, 3.4rem);
   font-weight: 400; color: #111;
   letter-spacing: 0.02em; line-height: 1;
 }
 .site-tagline {
   font-family: 'Source Sans 3', sans-serif;
-  font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: #aaa; margin-top: 0.35rem;
-  font-style: italic;
+  font-size: clamp(0.55rem, 2vw, 0.68rem); font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: #aaa; margin-top: 0.35rem; font-style: italic;
 }
 .site-sub {
-  font-size: 0.65rem; font-weight: 600;
-  letter-spacing: 0.28em; text-transform: uppercase;
-  color: #888; margin-top: 0.28rem;
+  font-size: clamp(0.55rem, 1.8vw, 0.65rem); font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #888; margin-top: 0.25rem;
 }
 #current-date {
-  font-size: 0.65rem; font-weight: 400;
-  letter-spacing: 0.12em; color: #999;
-  margin-top: 0.28rem; text-transform: uppercase;
+  font-size: clamp(0.52rem, 1.6vw, 0.65rem); font-weight: 400;
+  letter-spacing: 0.1em; color: #999;
+  margin-top: 0.25rem; text-transform: uppercase;
 }
 
-/* HOLIDAY / COUNTDOWN WIDGET */
+/* HOLIDAY WIDGET */
 #holidayWidget {
-  display: inline-flex; align-items: center; gap: 0.5rem;
+  display: inline-flex; align-items: center; gap: 0.45rem;
   background: #f8f8f8; border: 1px solid #e8e8e8;
-  border-radius: 999px; padding: 0.3rem 0.9rem;
-  margin-top: 0.75rem; font-size: 0.7rem;
-  font-weight: 700; color: #444;
-  letter-spacing: 0.04em;
+  border-radius: 999px; padding: 0.3rem 0.85rem;
+  margin-top: 0.7rem; font-size: clamp(0.62rem, 2vw, 0.7rem);
+  font-weight: 700; color: #444; letter-spacing: 0.03em;
+  max-width: 90vw; text-align: center;
 }
-#holidayWidget .hw-ico { font-size: 1rem; line-height: 1; }
-#holidayWidget.summer { background: #fff8e8; border-color: #f0d080; color: #7a5000; }
+#holidayWidget .hw-ico { font-size: 1rem; line-height: 1; flex-shrink: 0; }
+#holidayWidget.summer  { background: #fff8e8; border-color: #f0d080; color: #7a5000; }
 #holidayWidget.holiday { background: #fff0f0; border-color: #f0c0c0; color: #800020; }
 
 /* MAIN */
-main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
+main { max-width: 780px; margin: 0 auto; padding: 1.4rem 0.85rem 5rem; }
 
 /* SECTION LABEL */
 .slabel {
-  font-size: 0.62rem; font-weight: 700;
-  letter-spacing: 0.24em; text-transform: uppercase;
-  color: #aaa; margin: 1.75rem 0 0.65rem;
-  padding-bottom: 0.4rem; border-bottom: 1px solid #ebebeb;
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #aaa; margin: 1.5rem 0 0.6rem;
+  padding-bottom: 0.38rem; border-bottom: 1px solid #ebebeb;
 }
 
 /* CARD */
 .card {
   background: #fff !important; border: 1px solid #e8e8e8;
-  border-radius: 10px; padding: 1.2rem;
-  margin-bottom: 0.85rem;
+  border-radius: 12px; padding: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 /* SUMMARY */
 .summary {
   background: #fafafa !important; border: 1px solid #e8e8e8;
-  border-radius: 10px; padding: 1.25rem 1.4rem;
-  margin-bottom: 0.75rem;
+  border-radius: 12px; padding: 1.1rem 1.2rem;
+  margin-bottom: 0.7rem;
 }
 .summary-lbl {
-  font-size: 0.6rem; font-weight: 700;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: #888; margin-bottom: 0.4rem;
+  font-size: 0.58rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: #888; margin-bottom: 0.38rem;
 }
 .summary-txt {
   font-family: 'Libre Baskerville', serif;
-  font-size: 1.0rem; color: #111; line-height: 1.75;
+  font-size: clamp(0.88rem, 2.5vw, 1rem); color: #111; line-height: 1.8;
 }
-.tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.28rem; margin-top: 0.65rem; }
 .tag {
   background: #f0f0f0; border: 1px solid #e0e0e0;
   color: #666; border-radius: 999px;
-  padding: 0.16rem 0.6rem;
-  font-size: 0.6rem; font-weight: 600;
+  padding: 0.18rem 0.6rem;
+  font-size: 0.58rem; font-weight: 600;
   letter-spacing: 0.05em; text-transform: uppercase;
 }
 
-/* WEATHER + OCEAN (combined card) */
+/* WEATHER GRID — 3 col on phone, 6 on wide */
 .wx-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
-  gap: 0.55rem; margin-bottom: 0.75rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem; margin-bottom: 0.7rem;
 }
 .sblock {
   background: #fafafa !important; border: 1px solid #e8e8e8;
-  border-radius: 8px; padding: 0.8rem 0.55rem; text-align: center;
+  border-radius: 9px; padding: 0.75rem 0.4rem; text-align: center;
 }
-.sb-ico { font-size: 1.25rem; margin-bottom: 0.18rem; line-height: 1; }
+.sb-ico { font-size: 1.2rem; margin-bottom: 0.15rem; line-height: 1; }
 .sb-lbl {
-  font-size: 0.52rem; font-weight: 700;
-  letter-spacing: 0.13em; text-transform: uppercase;
-  color: #888; margin-bottom: 0.08rem;
+  font-size: 0.5rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #888; margin-bottom: 0.06rem;
 }
 .sb-val {
   font-family: 'Libre Baskerville', serif;
-  font-size: 1.2rem; font-weight: 700; color: #111; line-height: 1;
+  font-size: 1.1rem; font-weight: 700; color: #111; line-height: 1;
 }
-.sb-unit { font-size: 0.58rem; font-weight: 600; color: #888; }
+.sb-unit { font-size: 0.52rem; font-weight: 600; color: #888; }
 
 /* SUN ROW */
-.sun-row {
-  display: flex; gap: 0.55rem; margin-bottom: 0.75rem;
-}
+.sun-row { display: flex; gap: 0.5rem; margin-bottom: 0.7rem; }
 .sun-pill {
   flex: 1; background: #fafafa !important; border: 1px solid #e8e8e8;
-  border-radius: 8px; padding: 0.65rem 0.5rem; text-align: center;
+  border-radius: 9px; padding: 0.6rem 0.4rem; text-align: center;
 }
 .sun-lbl {
-  font-size: 0.52rem; font-weight: 700;
-  letter-spacing: 0.13em; text-transform: uppercase;
-  color: #888; margin-bottom: 0.1rem;
+  font-size: 0.5rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #888; margin-bottom: 0.08rem;
 }
 .sun-val {
   font-family: 'Libre Baskerville', serif;
-  font-size: 1rem; font-weight: 700; color: #111;
+  font-size: clamp(0.82rem, 2.5vw, 1rem); font-weight: 700; color: #111;
 }
 
-/* TIDE PILLS inside wx card */
-.tide-pills { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.55rem; margin-bottom: 0.75rem; }
+/* TIDE PILLS */
+.tide-pills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem; margin-bottom: 0.7rem;
+}
 .tide-pill {
   background: #fafafa !important; border: 1px solid #e0e0e0;
-  border-radius: 8px; padding: 0.85rem 0.8rem; text-align: center;
+  border-radius: 9px; padding: 0.75rem 0.6rem; text-align: center;
 }
-.tide-pill.low { background: #f6f9fc; border-color: #d5e3ef; }
+.tide-pill.low { background: #f6f9fc !important; border-color: #d5e3ef; }
 .tp-lbl {
-  font-size: 0.55rem; font-weight: 700;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  color: #888; margin-bottom: 0.2rem;
+  font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #888; margin-bottom: 0.18rem;
 }
 .tp-time {
   font-family: 'Libre Baskerville', serif;
-  font-size: 1.2rem; font-weight: 700; color: #111;
+  font-size: clamp(1rem, 3vw, 1.2rem); font-weight: 700; color: #111;
 }
-.tp-ht { font-size: 0.65rem; font-weight: 600; color: #999; margin-top: 0.1rem; }
+.tp-ht { font-size: 0.62rem; font-weight: 600; color: #999; margin-top: 0.08rem; }
 
 /* TIDE TIMELINE */
-.tl-outer { position: relative; height: 48px; margin-bottom: 0.4rem; }
+.tl-outer { position: relative; height: 52px; margin-bottom: 0.4rem; overflow: hidden; }
 .tl-line {
   position: absolute; top: 50%; left: 0; right: 0;
   height: 1px; background: #e0e0e0; transform: translateY(-50%);
@@ -214,144 +219,158 @@ main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 }
 .tm.low .tm-dot { background: #aaa; }
 .tm-lbl {
-  font-size: 0.52rem; font-weight: 600; color: #888;
+  font-size: 0.5rem; font-weight: 600; color: #888;
   white-space: nowrap; text-align: center; line-height: 1.3; margin: 2px 0;
 }
 .tl-hours {
   display: flex; justify-content: space-between;
-  font-size: 0.54rem; font-weight: 600; color: #999;
-  letter-spacing: 0.04em; padding: 0 2px;
+  font-size: 0.5rem; font-weight: 600; color: #999;
+  letter-spacing: 0.03em; padding: 0 2px;
 }
 
-/* MOON in wx card */
-.moon-row { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
-.moon-ico { font-size: 2.6rem; line-height: 1; }
-.moon-info { flex: 1; min-width: 120px; }
-.moon-name { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; font-weight: 700; color: #111; }
-.moon-det { font-size: 0.7rem; font-weight: 600; color: #999; margin-top: 0.1rem; }
-.moon-bar-wrap { flex: 1.5; min-width: 150px; }
-.moon-bar-lbl { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-bottom: 0.32rem; }
+/* MOON */
+.moon-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.moon-ico { font-size: 2.4rem; line-height: 1; }
+.moon-info { flex: 1; min-width: 100px; }
+.moon-name { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-weight: 700; color: #111; }
+.moon-det { font-size: 0.68rem; font-weight: 600; color: #999; margin-top: 0.08rem; }
+.moon-bar-wrap { flex: 1.5; min-width: 130px; }
+.moon-bar-lbl { font-size: 0.5rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 0.28rem; }
 .moon-bar { height: 4px; background: #ebebeb; border-radius: 999px; overflow: hidden; }
 .moon-fill { height: 100%; background: #333; border-radius: 999px; }
-.moon-day { font-size: 0.56rem; font-weight: 600; color: #999; text-align: right; margin-top: 0.28rem; }
+.moon-day { font-size: 0.52rem; font-weight: 600; color: #999; text-align: right; margin-top: 0.25rem; }
 
-/* ESSENTIAL LINKS */
-.essential-grid {
+/* GRIDS — essential, township, cams all forced 3-col on wide, adaptive on small */
+.essential-grid, .township-grid, .cams-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.65rem;
+  gap: 0.55rem;
 }
-.ess-card {
+.ess-card, .link-card {
   background: #fafafa !important; border: 1px solid #e8e8e8;
-  border-radius: 10px; padding: 1rem 0.8rem;
+  border-radius: 12px; padding: 0.9rem 0.6rem;
   text-align: center; text-decoration: none; display: block;
-  transition: background 0.15s, border-color 0.15s;
+  transition: background 0.15s;
+  -webkit-user-select: none; user-select: none;
 }
-.ess-card:hover { background: #f0f0f0; border-color: #999; }
-.ess-ico { font-size: 1.75rem; margin-bottom: 0.28rem; line-height: 1; }
-.ess-name { font-family: 'Libre Baskerville', serif; font-size: 0.88rem; font-weight: 700; color: #111; }
-.ess-sub { font-size: 0.6rem; font-weight: 600; color: #888; margin-top: 0.1rem; }
+.ess-card:active, .link-card:active { background: #efefef !important; }
+.ess-ico, .link-ico { font-size: 1.65rem; margin-bottom: 0.25rem; line-height: 1; }
+.ess-name, .link-name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(0.72rem, 2.2vw, 0.88rem); font-weight: 700; color: #111;
+}
+.ess-sub, .link-sub { font-size: clamp(0.52rem, 1.6vw, 0.6rem); font-weight: 600; color: #888; margin-top: 0.08rem; }
 
-/* 7-DAY */
+/* LINKS GRID — admin picks, auto-fit */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.55rem;
+}
+
+/* 7-DAY HEADER */
 .forecast-hdr {
   font-family: 'IM Fell English', serif;
-  font-size: 1.5rem; font-weight: 400; color: #111;
-  margin: 2.25rem 0 0.9rem;
-  padding: 0.55rem 0.9rem;
+  font-size: clamp(1.3rem, 4vw, 1.5rem); font-weight: 400; color: #111;
+  margin: 2rem 0 0.8rem;
+  padding: 0.5rem 0.85rem;
   background: #f5f0e8 !important;
   border: 1px solid #e0d8c8;
-  border-radius: 8px;
-  display: block;
+  border-radius: 9px; display: block;
 }
 
 /* DAY CARD */
 .day-card {
   background: #fff !important; border: 1px solid #e8e8e8;
-  border-radius: 10px; padding: 1rem 1.1rem 1.05rem;
-  margin-bottom: 0.7rem;
+  border-radius: 12px; padding: 0.9rem 1rem;
+  margin-bottom: 0.6rem;
 }
-.day-card.today { border-color: #aaa; border-width: 2px; }
+.day-card.today { border-color: #999; border-width: 2px; }
 .day-hdr {
   display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: 0.75rem; padding-bottom: 0.45rem;
+  margin-bottom: 0.65rem; padding-bottom: 0.4rem;
   border-bottom: 1px solid #f0f0f0;
 }
-.day-name { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-weight: 700; color: #111; }
-.day-dt { font-size: 0.62rem; font-weight: 600; color: #888; letter-spacing: 0.07em; text-transform: uppercase; }
+.day-name { font-family: 'Libre Baskerville', serif; font-size: clamp(0.9rem, 2.8vw, 1rem); font-weight: 700; color: #111; }
+.day-dt { font-size: clamp(0.54rem, 1.6vw, 0.62rem); font-weight: 600; color: #888; letter-spacing: 0.06em; text-transform: uppercase; }
 .day-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
-  gap: 0.38rem; margin-bottom: 0.55rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.32rem; margin-bottom: 0.5rem;
 }
 .dstat {
   background: #fafafa !important; border: 1px solid #ebebeb;
-  border-radius: 7px; padding: 0.44rem 0.38rem; text-align: center;
+  border-radius: 7px; padding: 0.4rem 0.28rem; text-align: center;
 }
-.dl { font-size: 0.49rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 0.06rem; }
-.dv { font-family: 'Libre Baskerville', serif; font-size: 0.9rem; font-weight: 700; color: #111; line-height: 1.1; }
-.du { font-size: 0.48rem; font-weight: 600; color: #999; }
-.day-tides { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.4rem; }
+.dl { font-size: 0.46rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #999; margin-bottom: 0.05rem; }
+.dv { font-family: 'Libre Baskerville', serif; font-size: clamp(0.78rem, 2.4vw, 0.9rem); font-weight: 700; color: #111; line-height: 1.1; }
+.du { font-size: 0.44rem; font-weight: 600; color: #999; }
+.day-tides { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.38rem; }
 .mpill {
-  flex: 1; min-width: 76px;
+  flex: 1; min-width: 70px;
   background: #fafafa !important; border: 1px solid #e8e8e8;
-  border-radius: 7px; padding: 0.4rem 0.45rem; text-align: center;
+  border-radius: 7px; padding: 0.38rem 0.38rem; text-align: center;
 }
-.mpill.low { background: #f6f9fc; border-color: #d5e3ef; }
-.ml { font-size: 0.49rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #999; }
-.mt { font-family: 'Libre Baskerville', serif; font-size: 0.9rem; font-weight: 700; color: #111; }
-.mh { font-size: 0.52rem; font-weight: 600; color: #888; }
+.mpill.low { background: #f6f9fc !important; border-color: #d5e3ef; }
+.ml { font-size: 0.46rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; }
+.mt { font-family: 'Libre Baskerville', serif; font-size: clamp(0.8rem, 2.4vw, 0.9rem); font-weight: 700; color: #111; }
+.mh { font-size: 0.48rem; font-weight: 600; color: #888; }
 
 /* SUN ROW in day card */
-.day-sun-row {
-  display: flex; gap: 0.35rem;
-}
+.day-sun-row { display: flex; gap: 0.3rem; }
 .day-sun-pill {
   flex: 1; background: #fafafa !important; border: 1px solid #ebebeb;
-  border-radius: 7px; padding: 0.38rem 0.4rem; text-align: center;
+  border-radius: 7px; padding: 0.35rem 0.35rem; text-align: center;
 }
-.dsl { font-size: 0.48rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 0.04rem; }
-.dsv { font-family: 'Libre Baskerville', serif; font-size: 0.82rem; font-weight: 700; color: #111; }
-
-/* CAMS + LINKS GRID */
-.cams-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.65rem;
-}
-.links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
-  gap: 0.65rem;
-}
-.link-card {
-  background: #fafafa !important; border: 1px solid #e8e8e8;
-  border-radius: 10px; padding: 1rem 0.8rem;
-  text-align: center; text-decoration: none; display: block;
-  transition: background 0.15s, border-color 0.15s;
-}
-.link-card:hover { background: #f0f0f0; border-color: #999; }
-.link-ico { font-size: 1.75rem; margin-bottom: 0.28rem; line-height: 1; }
-.link-name { font-family: 'Libre Baskerville', serif; font-size: 0.88rem; font-weight: 700; color: #111; }
-.link-sub { font-size: 0.6rem; font-weight: 600; color: #888; margin-top: 0.1rem; }
-
-
-.township-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.65rem;
-}
+.dsl { font-size: 0.44rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #999; margin-bottom: 0.03rem; }
+.dsv { font-family: 'Libre Baskerville', serif; font-size: clamp(0.72rem, 2.2vw, 0.82rem); font-weight: 700; color: #111; }
 
 /* FOOTER */
 footer {
   background: #fafafa !important; border-top: 1px solid #e8e8e8;
-  text-align: center; padding: 2rem 1rem;
-  font-size: 0.7rem; color: #999;
-  letter-spacing: 0.06em; line-height: 2.2;
+  text-align: center; padding: 1.75rem 1rem;
+  font-size: 0.68rem; color: #999;
+  letter-spacing: 0.05em; line-height: 2;
 }
 footer a { color: #aaa; text-decoration: none; }
 
-.loading { font-size: 0.8rem; color: #999; padding: 0.4rem 0; }
-.wx-divider { height: 1px; background: #ebebeb; margin: 0.75rem 0; }
+.loading { font-size: 0.78rem; color: #999; padding: 0.38rem 0; }
+.wx-divider { height: 1px; background: #ebebeb; margin: 0.7rem 0; }
+
+/* ── RESPONSIVE BREAKPOINTS ── */
+
+/* Large phone / small tablet (430px iPhone Pro Max) */
+@media (min-width: 430px) {
+  .wx-grid { grid-template-columns: repeat(3, 1fr); }
+  .day-grid { grid-template-columns: repeat(4, 1fr); }
+  .ess-name, .link-name { font-size: 0.85rem; }
+}
+
+/* Wide / tablet */
+@media (min-width: 600px) {
+  main { padding: 1.75rem 1.25rem 5rem; }
+  .wx-grid { grid-template-columns: repeat(6, 1fr); }
+  .tide-pills { grid-template-columns: repeat(4, 1fr); }
+  .day-grid { grid-template-columns: repeat(7, 1fr); }
+  .links-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  .sb-val { font-size: 1.2rem; }
+}
+
+/* Small phones (SE, 375px and below) */
+@media (max-width: 375px) {
+  main { padding: 1.1rem 0.65rem 4rem; }
+  .site-title { font-size: 1.9rem; }
+  .essential-grid, .township-grid, .cams-grid { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+  .ess-ico, .link-ico { font-size: 1.4rem; }
+  .ess-name, .link-name { font-size: 0.7rem; }
+  .ess-sub, .link-sub { font-size: 0.5rem; }
+  .wx-grid { gap: 0.38rem; }
+  .sb-val { font-size: 1rem; }
+  .day-grid { grid-template-columns: repeat(4, 1fr); gap: 0.25rem; }
+  .forecast-hdr { font-size: 1.2rem; padding: 0.45rem 0.7rem; }
+  .summary-txt { font-size: 0.85rem; }
+  .tide-pills { grid-template-columns: repeat(2, 1fr); }
+}
 </style>
 </head>
 <body>
@@ -454,7 +473,7 @@ footer a { color: #aaa; text-decoration: none; }
   <div class="slabel">&#x1F690; Transportation Links</div>
   <div class="essential-grid" style="grid-template-columns: repeat(3, 1fr);">
     <a href="sms:+16097566003" class="ess-card">
-      <div class="ess-ico">&#x1F68C;</div>
+      <div class="ess-ico">&#x1F68E;</div>
       <div class="ess-name">B&amp;B Shuttle</div>
       <div class="ess-sub">Text for pickup</div>
     </a>
@@ -464,7 +483,7 @@ footer a { color: #aaa; text-decoration: none; }
       <div class="ess-sub">Live tracker</div>
     </a>
     <a href="tel:+16094929538" class="ess-card">
-      <div class="ess-ico">&#x1F389;</div>
+      <div class="ess-ico">&#x1F68C;</div>
       <div class="ess-name">Nardis Party Bus</div>
       <div class="ess-sub">Tap to call</div>
     </a>
