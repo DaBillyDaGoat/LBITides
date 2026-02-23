@@ -6,15 +6,17 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="LBI Tides">
+<meta name="color-scheme" content="light">
 <meta name="theme-color" content="#ffffff">
 <title>LBI Tides</title>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
+:root { color-scheme: light; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Source Sans 3', sans-serif;
-  background: #ffffff;
+  background: #ffffff !important;
   color: #111111;
 }
 
@@ -22,13 +24,13 @@ body {
 #stormBanner {
   display: none;
   position: sticky; top: 0; z-index: 99;
-  background: #b02020; color: #fff;
+  background: #cc1111 !important; color: #fff !important;
   text-align: center; padding: 0.65rem 3rem;
   font-size: 0.78rem; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase;
 }
-#stormBanner.watch { background: #a04010; }
-#stormBanner.advisory { background: #7a5800; }
+#stormBanner.watch { background: #dd6600 !important; }
+#stormBanner.advisory { background: #cc9900 !important; }
 .banner-close {
   position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
   background: none; border: none; color: #fff; font-size: 1rem; cursor: pointer;
@@ -53,7 +55,7 @@ header {
   text-align: center;
   padding: 2.25rem 1rem 1.75rem;
   border-bottom: 1px solid #e0e0e0;
-  background: #fff;
+  background: #fff !important;
 }
 .flag-center { display: flex; justify-content: center; margin-bottom: 1rem; }
 .site-title {
@@ -72,11 +74,11 @@ header {
 .site-sub {
   font-size: 0.65rem; font-weight: 600;
   letter-spacing: 0.28em; text-transform: uppercase;
-  color: #bbb; margin-top: 0.28rem;
+  color: #888; margin-top: 0.28rem;
 }
 #current-date {
   font-size: 0.65rem; font-weight: 400;
-  letter-spacing: 0.12em; color: #ccc;
+  letter-spacing: 0.12em; color: #999;
   margin-top: 0.28rem; text-transform: uppercase;
 }
 
@@ -106,21 +108,21 @@ main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 
 /* CARD */
 .card {
-  background: #fff; border: 1px solid #e8e8e8;
+  background: #fff !important; border: 1px solid #e8e8e8;
   border-radius: 10px; padding: 1.2rem;
   margin-bottom: 0.85rem;
 }
 
 /* SUMMARY */
 .summary {
-  background: #fafafa; border: 1px solid #e8e8e8;
+  background: #fafafa !important; border: 1px solid #e8e8e8;
   border-radius: 10px; padding: 1.25rem 1.4rem;
   margin-bottom: 0.75rem;
 }
 .summary-lbl {
   font-size: 0.6rem; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: #bbb; margin-bottom: 0.4rem;
+  color: #888; margin-bottom: 0.4rem;
 }
 .summary-txt {
   font-family: 'Libre Baskerville', serif;
@@ -142,33 +144,33 @@ main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
   gap: 0.55rem; margin-bottom: 0.75rem;
 }
 .sblock {
-  background: #fafafa; border: 1px solid #e8e8e8;
+  background: #fafafa !important; border: 1px solid #e8e8e8;
   border-radius: 8px; padding: 0.8rem 0.55rem; text-align: center;
 }
 .sb-ico { font-size: 1.25rem; margin-bottom: 0.18rem; line-height: 1; }
 .sb-lbl {
   font-size: 0.52rem; font-weight: 700;
   letter-spacing: 0.13em; text-transform: uppercase;
-  color: #bbb; margin-bottom: 0.08rem;
+  color: #888; margin-bottom: 0.08rem;
 }
 .sb-val {
   font-family: 'Libre Baskerville', serif;
   font-size: 1.2rem; font-weight: 700; color: #111; line-height: 1;
 }
-.sb-unit { font-size: 0.58rem; font-weight: 600; color: #bbb; }
+.sb-unit { font-size: 0.58rem; font-weight: 600; color: #888; }
 
 /* SUN ROW */
 .sun-row {
   display: flex; gap: 0.55rem; margin-bottom: 0.75rem;
 }
 .sun-pill {
-  flex: 1; background: #fafafa; border: 1px solid #e8e8e8;
+  flex: 1; background: #fafafa !important; border: 1px solid #e8e8e8;
   border-radius: 8px; padding: 0.65rem 0.5rem; text-align: center;
 }
 .sun-lbl {
   font-size: 0.52rem; font-weight: 700;
   letter-spacing: 0.13em; text-transform: uppercase;
-  color: #bbb; margin-bottom: 0.1rem;
+  color: #888; margin-bottom: 0.1rem;
 }
 .sun-val {
   font-family: 'Libre Baskerville', serif;
@@ -178,14 +180,14 @@ main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 /* TIDE PILLS inside wx card */
 .tide-pills { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.55rem; margin-bottom: 0.75rem; }
 .tide-pill {
-  background: #fafafa; border: 1px solid #e0e0e0;
+  background: #fafafa !important; border: 1px solid #e0e0e0;
   border-radius: 8px; padding: 0.85rem 0.8rem; text-align: center;
 }
 .tide-pill.low { background: #f6f9fc; border-color: #d5e3ef; }
 .tp-lbl {
   font-size: 0.55rem; font-weight: 700;
   letter-spacing: 0.15em; text-transform: uppercase;
-  color: #bbb; margin-bottom: 0.2rem;
+  color: #888; margin-bottom: 0.2rem;
 }
 .tp-time {
   font-family: 'Libre Baskerville', serif;
@@ -217,7 +219,7 @@ main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 }
 .tl-hours {
   display: flex; justify-content: space-between;
-  font-size: 0.54rem; font-weight: 600; color: #ccc;
+  font-size: 0.54rem; font-weight: 600; color: #999;
   letter-spacing: 0.04em; padding: 0 2px;
 }
 
@@ -228,10 +230,10 @@ main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 .moon-name { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; font-weight: 700; color: #111; }
 .moon-det { font-size: 0.7rem; font-weight: 600; color: #999; margin-top: 0.1rem; }
 .moon-bar-wrap { flex: 1.5; min-width: 150px; }
-.moon-bar-lbl { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bbb; margin-bottom: 0.32rem; }
+.moon-bar-lbl { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-bottom: 0.32rem; }
 .moon-bar { height: 4px; background: #ebebeb; border-radius: 999px; overflow: hidden; }
 .moon-fill { height: 100%; background: #333; border-radius: 999px; }
-.moon-day { font-size: 0.56rem; font-weight: 600; color: #ccc; text-align: right; margin-top: 0.28rem; }
+.moon-day { font-size: 0.56rem; font-weight: 600; color: #999; text-align: right; margin-top: 0.28rem; }
 
 /* ESSENTIAL LINKS */
 .essential-grid {
@@ -240,27 +242,31 @@ main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
   gap: 0.65rem;
 }
 .ess-card {
-  background: #fafafa; border: 1px solid #e8e8e8;
+  background: #fafafa !important; border: 1px solid #e8e8e8;
   border-radius: 10px; padding: 1rem 0.8rem;
   text-align: center; text-decoration: none; display: block;
   transition: background 0.15s, border-color 0.15s;
 }
-.ess-card:hover { background: #f0f0f0; border-color: #ccc; }
+.ess-card:hover { background: #f0f0f0; border-color: #999; }
 .ess-ico { font-size: 1.75rem; margin-bottom: 0.28rem; line-height: 1; }
 .ess-name { font-family: 'Libre Baskerville', serif; font-size: 0.88rem; font-weight: 700; color: #111; }
-.ess-sub { font-size: 0.6rem; font-weight: 600; color: #bbb; margin-top: 0.1rem; }
+.ess-sub { font-size: 0.6rem; font-weight: 600; color: #888; margin-top: 0.1rem; }
 
 /* 7-DAY */
 .forecast-hdr {
   font-family: 'IM Fell English', serif;
   font-size: 1.5rem; font-weight: 400; color: #111;
   margin: 2.25rem 0 0.9rem;
-  padding-bottom: 0.5rem; border-bottom: 1px solid #e0e0e0;
+  padding: 0.55rem 0.9rem;
+  background: #f5f0e8 !important;
+  border: 1px solid #e0d8c8;
+  border-radius: 8px;
+  display: block;
 }
 
 /* DAY CARD */
 .day-card {
-  background: #fff; border: 1px solid #e8e8e8;
+  background: #fff !important; border: 1px solid #e8e8e8;
   border-radius: 10px; padding: 1rem 1.1rem 1.05rem;
   margin-bottom: 0.7rem;
 }
@@ -271,39 +277,39 @@ main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
   border-bottom: 1px solid #f0f0f0;
 }
 .day-name { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-weight: 700; color: #111; }
-.day-dt { font-size: 0.62rem; font-weight: 600; color: #bbb; letter-spacing: 0.07em; text-transform: uppercase; }
+.day-dt { font-size: 0.62rem; font-weight: 600; color: #888; letter-spacing: 0.07em; text-transform: uppercase; }
 .day-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
   gap: 0.38rem; margin-bottom: 0.55rem;
 }
 .dstat {
-  background: #fafafa; border: 1px solid #ebebeb;
+  background: #fafafa !important; border: 1px solid #ebebeb;
   border-radius: 7px; padding: 0.44rem 0.38rem; text-align: center;
 }
-.dl { font-size: 0.49rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #ccc; margin-bottom: 0.06rem; }
+.dl { font-size: 0.49rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 0.06rem; }
 .dv { font-family: 'Libre Baskerville', serif; font-size: 0.9rem; font-weight: 700; color: #111; line-height: 1.1; }
-.du { font-size: 0.48rem; font-weight: 600; color: #ccc; }
+.du { font-size: 0.48rem; font-weight: 600; color: #999; }
 .day-tides { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.4rem; }
 .mpill {
   flex: 1; min-width: 76px;
-  background: #fafafa; border: 1px solid #e8e8e8;
+  background: #fafafa !important; border: 1px solid #e8e8e8;
   border-radius: 7px; padding: 0.4rem 0.45rem; text-align: center;
 }
 .mpill.low { background: #f6f9fc; border-color: #d5e3ef; }
-.ml { font-size: 0.49rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #ccc; }
+.ml { font-size: 0.49rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #999; }
 .mt { font-family: 'Libre Baskerville', serif; font-size: 0.9rem; font-weight: 700; color: #111; }
-.mh { font-size: 0.52rem; font-weight: 600; color: #bbb; }
+.mh { font-size: 0.52rem; font-weight: 600; color: #888; }
 
 /* SUN ROW in day card */
 .day-sun-row {
   display: flex; gap: 0.35rem;
 }
 .day-sun-pill {
-  flex: 1; background: #fafafa; border: 1px solid #ebebeb;
+  flex: 1; background: #fafafa !important; border: 1px solid #ebebeb;
   border-radius: 7px; padding: 0.38rem 0.4rem; text-align: center;
 }
-.dsl { font-size: 0.48rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; margin-bottom: 0.04rem; }
+.dsl { font-size: 0.48rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 0.04rem; }
 .dsv { font-family: 'Libre Baskerville', serif; font-size: 0.82rem; font-weight: 700; color: #111; }
 
 /* CAMS + LINKS GRID */
@@ -318,26 +324,33 @@ main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
   gap: 0.65rem;
 }
 .link-card {
-  background: #fafafa; border: 1px solid #e8e8e8;
+  background: #fafafa !important; border: 1px solid #e8e8e8;
   border-radius: 10px; padding: 1rem 0.8rem;
   text-align: center; text-decoration: none; display: block;
   transition: background 0.15s, border-color 0.15s;
 }
-.link-card:hover { background: #f0f0f0; border-color: #ccc; }
+.link-card:hover { background: #f0f0f0; border-color: #999; }
 .link-ico { font-size: 1.75rem; margin-bottom: 0.28rem; line-height: 1; }
 .link-name { font-family: 'Libre Baskerville', serif; font-size: 0.88rem; font-weight: 700; color: #111; }
-.link-sub { font-size: 0.6rem; font-weight: 600; color: #bbb; margin-top: 0.1rem; }
+.link-sub { font-size: 0.6rem; font-weight: 600; color: #888; margin-top: 0.1rem; }
+
+
+.township-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
 
 /* FOOTER */
 footer {
-  background: #fafafa; border-top: 1px solid #e8e8e8;
+  background: #fafafa !important; border-top: 1px solid #e8e8e8;
   text-align: center; padding: 2rem 1rem;
-  font-size: 0.7rem; color: #ccc;
+  font-size: 0.7rem; color: #999;
   letter-spacing: 0.06em; line-height: 2.2;
 }
 footer a { color: #aaa; text-decoration: none; }
 
-.loading { font-size: 0.8rem; color: #ccc; padding: 0.4rem 0; }
+.loading { font-size: 0.8rem; color: #999; padding: 0.4rem 0; }
 .wx-divider { height: 1px; background: #ebebeb; margin: 0.75rem 0; }
 </style>
 </head>
@@ -471,19 +484,29 @@ footer a { color: #aaa; text-decoration: none; }
     </a>
   </div>
 
-  <!-- ADMIN PICKS -->
-  <div class="slabel">&#x1F3DD;&#xFE0F; Admin Picks</div>
-  <div class="links-grid">
-    <a href="https://lbtbp.com" class="link-card" target="_blank">
-      <div class="link-ico">&#x1F6DF;</div>
-      <div class="link-name">LBTBP</div>
-      <div class="link-sub">Beach patrol</div>
-    </a>
+  <!-- TOWNSHIP -->
+  <div class="slabel">&#x1F3DB;&#xFE0F; Township</div>
+  <div class="township-grid">
     <a href="https://www.longbeachtownship.com" class="link-card" target="_blank">
       <div class="link-ico">&#x1F6C3;</div>
       <div class="link-name">LB Township</div>
       <div class="link-sub">Town info &amp; resources</div>
     </a>
+    <a href="https://lbtbp.com" class="link-card" target="_blank">
+      <div class="link-ico">&#x1F6DF;</div>
+      <div class="link-name">LBTBP</div>
+      <div class="link-sub">Beach patrol</div>
+    </a>
+    <a href="https://business.visitlbiregion.com/community-calendar" class="link-card" target="_blank">
+      <div class="link-ico">&#x1F4C5;</div>
+      <div class="link-name">Events Calendar</div>
+      <div class="link-sub">So. Ocean County Chamber</div>
+    </a>
+  </div>
+
+    <!-- ADMIN PICKS -->
+  <div class="slabel">&#x1F3DD;&#xFE0F; Admin Picks</div>
+  <div class="links-grid">
     <a href="https://ferrarasislandbakery.com" class="link-card" target="_blank">
       <div class="link-ico">&#x1F369;</div>
       <div class="link-name">Ferrara's Bakery</div>
@@ -514,7 +537,12 @@ footer a { color: #aaa; text-decoration: none; }
       <div class="link-name">Skipper Dipper</div>
       <div class="link-sub">Ice cream</div>
     </a>
-    <a href="https://www.birdandbettys.com/food-menu" class="link-card" target="_blank">
+    <a href="https://lucillescandies.com" class="link-card" target="_blank">
+      <div class="link-ico">&#x1F36C;</div>
+      <div class="link-name">Lucille&#x27;s Candies</div>
+      <div class="link-sub">Since 1927 · Brant Beach</div>
+    </a>
+        <a href="https://www.birdandbettys.com/food-menu" class="link-card" target="_blank">
       <div class="link-ico">&#x1F3B6;</div>
       <div class="link-name">Bird &amp; Betty's</div>
       <div class="link-sub">Food &amp; music</div>
