@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="LBI Tides">
+<meta name="theme-color" content="#ffffff">
 <title>LBI Tides</title>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -30,94 +34,99 @@ body {
   background: none; border: none; color: #fff; font-size: 1rem; cursor: pointer;
 }
 
+/* IOS PROMPT */
+#iosPrompt {
+  display: none;
+  background: #f8f8f8; border-bottom: 1px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem; color: #555;
+  text-align: center; position: relative;
+}
+#iosPrompt strong { color: #111; }
+.ios-close {
+  position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%);
+  background: none; border: none; font-size: 1rem; color: #aaa; cursor: pointer;
+}
+
 /* HEADER */
 header {
   text-align: center;
   padding: 2.25rem 1rem 1.75rem;
   border-bottom: 1px solid #e0e0e0;
+  background: #fff;
 }
-
-.flag-center {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
+.flag-center { display: flex; justify-content: center; margin-bottom: 1rem; }
 .site-title {
   font-family: 'IM Fell English', serif;
   font-size: clamp(2.2rem, 6vw, 3.4rem);
-  font-weight: 400;
-  color: #111;
-  letter-spacing: 0.02em;
-  line-height: 1;
+  font-weight: 400; color: #111;
+  letter-spacing: 0.02em; line-height: 1;
 }
-
-.site-sub {
+.site-tagline {
   font-family: 'Source Sans 3', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #999;
-  margin-top: 0.4rem;
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #aaa; margin-top: 0.35rem;
+  font-style: italic;
+}
+.site-sub {
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: #bbb; margin-top: 0.28rem;
+}
+#current-date {
+  font-size: 0.65rem; font-weight: 400;
+  letter-spacing: 0.12em; color: #ccc;
+  margin-top: 0.28rem; text-transform: uppercase;
 }
 
-#current-date {
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: #bbb;
-  margin-top: 0.3rem;
-  text-transform: uppercase;
+/* HOLIDAY / COUNTDOWN WIDGET */
+#holidayWidget {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #f8f8f8; border: 1px solid #e8e8e8;
+  border-radius: 999px; padding: 0.3rem 0.9rem;
+  margin-top: 0.75rem; font-size: 0.7rem;
+  font-weight: 700; color: #444;
+  letter-spacing: 0.04em;
 }
+#holidayWidget .hw-ico { font-size: 1rem; line-height: 1; }
+#holidayWidget.summer { background: #fff8e8; border-color: #f0d080; color: #7a5000; }
+#holidayWidget.holiday { background: #fff0f0; border-color: #f0c0c0; color: #800020; }
 
 /* MAIN */
-main {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 1.75rem 1rem 5rem;
-}
+main { max-width: 780px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 
 /* SECTION LABEL */
 .slabel {
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: #aaa;
-  margin: 1.75rem 0 0.65rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid #ebebeb;
+  font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: #aaa; margin: 1.75rem 0 0.65rem;
+  padding-bottom: 0.4rem; border-bottom: 1px solid #ebebeb;
 }
 
 /* CARD */
 .card {
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 10px;
-  padding: 1.2rem;
+  background: #fff; border: 1px solid #e8e8e8;
+  border-radius: 10px; padding: 1.2rem;
   margin-bottom: 0.85rem;
 }
 
 /* SUMMARY */
 .summary {
-  background: #fafafa;
-  border: 1px solid #e8e8e8;
-  border-radius: 10px;
-  padding: 1.25rem 1.4rem;
+  background: #fafafa; border: 1px solid #e8e8e8;
+  border-radius: 10px; padding: 1.25rem 1.4rem;
   margin-bottom: 0.75rem;
 }
 .summary-lbl {
   font-size: 0.6rem; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: #bbb; margin-bottom: 0.35rem;
+  color: #bbb; margin-bottom: 0.4rem;
 }
 .summary-txt {
   font-family: 'Libre Baskerville', serif;
-  font-size: 1.05rem; color: #111; line-height: 1.7;
+  font-size: 1.0rem; color: #111; line-height: 1.75;
 }
-.tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.7rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.75rem; }
 .tag {
   background: #f0f0f0; border: 1px solid #e0e0e0;
   color: #666; border-radius: 999px;
@@ -126,25 +135,65 @@ main {
   letter-spacing: 0.05em; text-transform: uppercase;
 }
 
-/* TIDE PILLS */
-.tide-pills { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.65rem; margin-bottom: 1.1rem; }
+/* WEATHER + OCEAN (combined card) */
+.wx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
+  gap: 0.55rem; margin-bottom: 0.75rem;
+}
+.sblock {
+  background: #fafafa; border: 1px solid #e8e8e8;
+  border-radius: 8px; padding: 0.8rem 0.55rem; text-align: center;
+}
+.sb-ico { font-size: 1.25rem; margin-bottom: 0.18rem; line-height: 1; }
+.sb-lbl {
+  font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: #bbb; margin-bottom: 0.08rem;
+}
+.sb-val {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem; font-weight: 700; color: #111; line-height: 1;
+}
+.sb-unit { font-size: 0.58rem; font-weight: 600; color: #bbb; }
+
+/* SUN ROW */
+.sun-row {
+  display: flex; gap: 0.55rem; margin-bottom: 0.75rem;
+}
+.sun-pill {
+  flex: 1; background: #fafafa; border: 1px solid #e8e8e8;
+  border-radius: 8px; padding: 0.65rem 0.5rem; text-align: center;
+}
+.sun-lbl {
+  font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: #bbb; margin-bottom: 0.1rem;
+}
+.sun-val {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem; font-weight: 700; color: #111;
+}
+
+/* TIDE PILLS inside wx card */
+.tide-pills { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.55rem; margin-bottom: 0.75rem; }
 .tide-pill {
   background: #fafafa; border: 1px solid #e0e0e0;
-  border-radius: 8px; padding: 1rem 0.8rem; text-align: center;
+  border-radius: 8px; padding: 0.85rem 0.8rem; text-align: center;
 }
 .tide-pill.low { background: #f6f9fc; border-color: #d5e3ef; }
 .tp-lbl {
-  font-size: 0.58rem; font-weight: 700;
+  font-size: 0.55rem; font-weight: 700;
   letter-spacing: 0.15em; text-transform: uppercase;
-  color: #aaa; margin-bottom: 0.25rem;
+  color: #bbb; margin-bottom: 0.2rem;
 }
 .tp-time {
   font-family: 'Libre Baskerville', serif;
-  font-size: 1.3rem; font-weight: 700; color: #111;
+  font-size: 1.2rem; font-weight: 700; color: #111;
 }
-.tp-ht { font-size: 0.72rem; font-weight: 600; color: #777; margin-top: 0.18rem; }
+.tp-ht { font-size: 0.65rem; font-weight: 600; color: #999; margin-top: 0.1rem; }
 
-/* TIMELINE */
+/* TIDE TIMELINE */
 .tl-outer { position: relative; height: 48px; margin-bottom: 0.4rem; }
 .tl-line {
   position: absolute; top: 50%; left: 0; right: 0;
@@ -172,81 +221,41 @@ main {
   letter-spacing: 0.04em; padding: 0 2px;
 }
 
-/* STATS */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
-  gap: 0.55rem;
-}
-.sblock {
-  background: #fafafa; border: 1px solid #e8e8e8;
-  border-radius: 8px; padding: 0.8rem 0.55rem; text-align: center;
-}
-.sb-ico { font-size: 1.25rem; margin-bottom: 0.18rem; line-height: 1; }
-.sb-lbl {
-  font-size: 0.52rem; font-weight: 700;
-  letter-spacing: 0.13em; text-transform: uppercase;
-  color: #bbb; margin-bottom: 0.08rem;
-}
-.sb-val {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 1.2rem; font-weight: 700; color: #111; line-height: 1;
-}
-.sb-unit { font-size: 0.58rem; font-weight: 600; color: #bbb; }
-
-/* MOON */
+/* MOON in wx card */
 .moon-row { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
 .moon-ico { font-size: 2.6rem; line-height: 1; }
 .moon-info { flex: 1; min-width: 120px; }
-.moon-name {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 1.05rem; font-weight: 700; color: #111;
-}
+.moon-name { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; font-weight: 700; color: #111; }
 .moon-det { font-size: 0.7rem; font-weight: 600; color: #999; margin-top: 0.1rem; }
 .moon-bar-wrap { flex: 1.5; min-width: 150px; }
-.moon-bar-lbl {
-  font-size: 0.52rem; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: #bbb; margin-bottom: 0.32rem;
-}
+.moon-bar-lbl { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bbb; margin-bottom: 0.32rem; }
 .moon-bar { height: 4px; background: #ebebeb; border-radius: 999px; overflow: hidden; }
 .moon-fill { height: 100%; background: #333; border-radius: 999px; }
 .moon-day { font-size: 0.56rem; font-weight: 600; color: #ccc; text-align: right; margin-top: 0.28rem; }
 
-/* LINKS */
-
-.cams-grid {
+/* ESSENTIAL LINKS */
+.essential-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.65rem;
-  margin-bottom: 0.85rem;
 }
-.links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
-  gap: 0.65rem;
-}
-.link-card {
+.ess-card {
   background: #fafafa; border: 1px solid #e8e8e8;
   border-radius: 10px; padding: 1rem 0.8rem;
   text-align: center; text-decoration: none; display: block;
   transition: background 0.15s, border-color 0.15s;
 }
-.link-card:hover { background: #f2f2f2; border-color: #ccc; }
-.link-ico { font-size: 1.75rem; margin-bottom: 0.28rem; line-height: 1; }
-.link-name {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 0.88rem; font-weight: 700; color: #111;
-}
-.link-sub { font-size: 0.6rem; font-weight: 600; color: #bbb; margin-top: 0.1rem; }
+.ess-card:hover { background: #f0f0f0; border-color: #ccc; }
+.ess-ico { font-size: 1.75rem; margin-bottom: 0.28rem; line-height: 1; }
+.ess-name { font-family: 'Libre Baskerville', serif; font-size: 0.88rem; font-weight: 700; color: #111; }
+.ess-sub { font-size: 0.6rem; font-weight: 600; color: #bbb; margin-top: 0.1rem; }
 
 /* 7-DAY */
 .forecast-hdr {
   font-family: 'IM Fell English', serif;
   font-size: 1.5rem; font-weight: 400; color: #111;
   margin: 2.25rem 0 0.9rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem; border-bottom: 1px solid #e0e0e0;
 }
 
 /* DAY CARD */
@@ -255,20 +264,14 @@ main {
   border-radius: 10px; padding: 1rem 1.1rem 1.05rem;
   margin-bottom: 0.7rem;
 }
-.day-card.today { border-color: #aaa; }
+.day-card.today { border-color: #aaa; border-width: 2px; }
 .day-hdr {
   display: flex; align-items: baseline; justify-content: space-between;
   margin-bottom: 0.75rem; padding-bottom: 0.45rem;
   border-bottom: 1px solid #f0f0f0;
 }
-.day-name {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 1rem; font-weight: 700; color: #111;
-}
-.day-dt {
-  font-size: 0.62rem; font-weight: 600; color: #bbb;
-  letter-spacing: 0.07em; text-transform: uppercase;
-}
+.day-name { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-weight: 700; color: #111; }
+.day-dt { font-size: 0.62rem; font-weight: 600; color: #bbb; letter-spacing: 0.07em; text-transform: uppercase; }
 .day-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
@@ -281,7 +284,7 @@ main {
 .dl { font-size: 0.49rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #ccc; margin-bottom: 0.06rem; }
 .dv { font-family: 'Libre Baskerville', serif; font-size: 0.9rem; font-weight: 700; color: #111; line-height: 1.1; }
 .du { font-size: 0.48rem; font-weight: 600; color: #ccc; }
-.day-tides { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.day-tides { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.4rem; }
 .mpill {
   flex: 1; min-width: 76px;
   background: #fafafa; border: 1px solid #e8e8e8;
@@ -292,25 +295,67 @@ main {
 .mt { font-family: 'Libre Baskerville', serif; font-size: 0.9rem; font-weight: 700; color: #111; }
 .mh { font-size: 0.52rem; font-weight: 600; color: #bbb; }
 
+/* SUN ROW in day card */
+.day-sun-row {
+  display: flex; gap: 0.35rem;
+}
+.day-sun-pill {
+  flex: 1; background: #fafafa; border: 1px solid #ebebeb;
+  border-radius: 7px; padding: 0.38rem 0.4rem; text-align: center;
+}
+.dsl { font-size: 0.48rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; margin-bottom: 0.04rem; }
+.dsv { font-family: 'Libre Baskerville', serif; font-size: 0.82rem; font-weight: 700; color: #111; }
+
+/* CAMS + LINKS GRID */
+.cams-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
+  gap: 0.65rem;
+}
+.link-card {
+  background: #fafafa; border: 1px solid #e8e8e8;
+  border-radius: 10px; padding: 1rem 0.8rem;
+  text-align: center; text-decoration: none; display: block;
+  transition: background 0.15s, border-color 0.15s;
+}
+.link-card:hover { background: #f0f0f0; border-color: #ccc; }
+.link-ico { font-size: 1.75rem; margin-bottom: 0.28rem; line-height: 1; }
+.link-name { font-family: 'Libre Baskerville', serif; font-size: 0.88rem; font-weight: 700; color: #111; }
+.link-sub { font-size: 0.6rem; font-weight: 600; color: #bbb; margin-top: 0.1rem; }
+
 /* FOOTER */
 footer {
   background: #fafafa; border-top: 1px solid #e8e8e8;
   text-align: center; padding: 2rem 1rem;
-  font-size: 0.68rem; color: #ccc;
+  font-size: 0.7rem; color: #ccc;
   letter-spacing: 0.06em; line-height: 2.2;
 }
 footer a { color: #aaa; text-decoration: none; }
 
 .loading { font-size: 0.8rem; color: #ccc; padding: 0.4rem 0; }
+.wx-divider { height: 1px; background: #ebebeb; margin: 0.75rem 0; }
 </style>
 </head>
 <body>
 
-<div id="stormBanner">
-  <span id="bannerText"></span>
-  <button class="banner-close" onclick="this.parentElement.style.display='none'">&#x2715;</button>
+<!-- IOS HOME SCREEN PROMPT -->
+<div id="iosPrompt">
+  <span>📲 Tap <strong>Share</strong> then <strong>"Add to Home Screen"</strong> for quick access to LBI Tides</span>
+  <button class="ios-close" onclick="document.getElementById('iosPrompt').style.display='none';localStorage.setItem('iosPromptDismissed','1')">✕</button>
 </div>
 
+<!-- STORM BANNER -->
+<div id="stormBanner">
+  <span id="bannerText"></span>
+  <button class="banner-close" onclick="this.parentElement.style.display='none'">✕</button>
+</div>
+
+<!-- HEADER -->
 <header>
   <div class="flag-center">
     <svg viewBox="0 0 166 100" height="48" xmlns="http://www.w3.org/2000/svg">
@@ -354,124 +399,138 @@ footer a { color: #aaa; text-decoration: none; }
     </svg>
   </div>
   <div class="site-title">LBI Tides</div>
-  <div class="site-sub">Long Beach Island &middot; New Jersey</div>
+  <div class="site-tagline">Unofficial Homepage of Long Beach Island</div>
+  <div class="site-sub">Barnegat Light &middot; New Jersey</div>
   <div id="current-date"></div>
+  <div id="holidayWidget" style="display:none"><span class="hw-ico" id="hwIco"></span><span id="hwText"></span></div>
 </header>
 
 <main>
+
+  <!-- DAY AT A GLANCE -->
   <div class="summary">
     <div class="summary-lbl">Today at a Glance</div>
     <div class="summary-txt" id="summaryText">Loading conditions&#8230;</div>
     <div class="tags" id="summaryTags"></div>
   </div>
 
-  <div class="slabel">&#x1F30A; Today&#8217;s Tides &mdash; Barnegat Light</div>
-  <div class="card">
+  <!-- WEATHER & OCEAN -->
+  <div class="slabel">&#x1F324;&#xFE0F; Weather &amp; Ocean</div>
+  <div class="card" id="wxCard">
+    <div class="wx-grid" id="weatherStats"><div class="loading">Loading&#8230;</div></div>
+    <div class="wx-divider"></div>
+    <div class="sun-row" id="sunRow"></div>
+    <div class="wx-divider"></div>
     <div class="tide-pills" id="tidePills"><div class="loading">Loading&#8230;</div></div>
     <div id="tideTimeline"></div>
-  </div>
-
-  <div class="slabel">&#x2600;&#xFE0F; Weather &amp; Ocean</div>
-  <div class="card">
-    <div class="stats-grid" id="weatherStats"><div class="loading">Loading&#8230;</div></div>
-  </div>
-
-  <div class="slabel">&#x1F319; Moon Phase</div>
-  <div class="card">
+    <div class="wx-divider"></div>
     <div class="moon-row" id="moonDisplay"><div class="loading">Loading&#8230;</div></div>
   </div>
 
-  <div class="forecast-hdr">7-Day Forecast</div>
-    <div id="forecastDays"></div>
-
-  <div class="slabel">📹 Live Cams</div>
-  <div class="cams-grid">
-    <a href="https://www.joyislbi.com/webcam" class="link-card" target="_blank">
-      <div class="link-ico">🐬</div>
-      <div class="link-name">Barnegat Inlet</div>
-      <div class="link-sub">Joy LBI · Live HD</div>
+  <!-- ESSENTIAL LINKS -->
+  <div class="slabel">&#x1F517; Essential Links</div>
+  <div class="essential-grid">
+    <a href="sms:+16097566003" class="ess-card">
+      <div class="ess-ico">&#x1F68C;</div>
+      <div class="ess-name">B&amp;B Shuttle</div>
+      <div class="ess-sub">Text for pickup</div>
     </a>
-    <a href="https://www.harveycedars.org/cn/webpage.cfm?tpid=16942" class="link-card" target="_blank">
-      <div class="link-ico">⛱️</div>
-      <div class="link-name">Harvey Cedars</div>
-      <div class="link-sub">Ocean · bay · blvd</div>
+    <a href="https://www.thesandpaper.net" class="ess-card" target="_blank">
+      <div class="ess-ico">&#x1F4F0;</div>
+      <div class="ess-name">The Sand Paper</div>
+      <div class="ess-sub">Local LBI news</div>
     </a>
-    <a href="https://camstreamer.com/live/stream/43500-long-beach-township-new-jersey-usa" class="link-card" target="_blank">
-      <div class="link-ico">🛥️</div>
-      <div class="link-name">LBT Field Station</div>
-      <div class="link-sub">Bay · Clam Cove PTZ</div>
+    <a href="https://tracker.lbishuttle.com" class="ess-card" target="_blank">
+      <div class="ess-ico">&#x1F68D;</div>
+      <div class="ess-name">LBI Shuttle</div>
+      <div class="ess-sub">Live tracker</div>
     </a>
   </div>
 
-  <div class="slabel">🏝️ LBI Essentials</div>
+  <!-- 7-DAY -->
+  <div class="forecast-hdr">7-Day Forecast</div>
+  <div id="forecastDays"></div>
+
+  <!-- LIVE CAMS -->
+  <div class="slabel">&#x1F4F9; Live Cams</div>
+  <div class="cams-grid">
+    <a href="https://www.joyislbi.com/webcam" class="link-card" target="_blank">
+      <div class="link-ico">&#x1F42C;</div>
+      <div class="link-name">Barnegat Inlet</div>
+      <div class="link-sub">Joy LBI &middot; Live HD</div>
+    </a>
+    <a href="https://www.harveycedars.org/cn/webpage.cfm?tpid=16942" class="link-card" target="_blank">
+      <div class="link-ico">&#x26F1;&#xFE0F;</div>
+      <div class="link-name">Harvey Cedars</div>
+      <div class="link-sub">Ocean &middot; bay &middot; blvd</div>
+    </a>
+    <a href="https://camstreamer.com/live/stream/43500-long-beach-township-new-jersey-usa" class="link-card" target="_blank">
+      <div class="link-ico">&#x1F6E5;&#xFE0F;</div>
+      <div class="link-name">LBT Field Station</div>
+      <div class="link-sub">Bay &middot; Clam Cove PTZ</div>
+    </a>
+  </div>
+
+  <!-- ADMIN PICKS -->
+  <div class="slabel">&#x1F3DD;&#xFE0F; Admin Picks</div>
   <div class="links-grid">
     <a href="https://lbtbp.com" class="link-card" target="_blank">
-      <div class="link-ico">🛟</div>
+      <div class="link-ico">&#x1F6DF;</div>
       <div class="link-name">LBTBP</div>
       <div class="link-sub">Beach patrol</div>
     </a>
     <a href="https://www.longbeachtownship.com" class="link-card" target="_blank">
-      <div class="link-ico">🛃</div>
+      <div class="link-ico">&#x1F6C3;</div>
       <div class="link-name">LB Township</div>
       <div class="link-sub">Town info &amp; resources</div>
     </a>
-    <a href="https://www.thesandpaper.net" class="link-card" target="_blank">
-      <div class="link-ico">📰</div>
-      <div class="link-name">The Sand Paper</div>
-      <div class="link-sub">Local LBI news</div>
-    </a>
-    <a href="https://tracker.lbishuttle.com" class="link-card" target="_blank">
-      <div class="link-ico">🚍</div>
-      <div class="link-name">LBI Shuttle</div>
-      <div class="link-sub">Live tracker</div>
-    </a>
     <a href="https://ferrarasislandbakery.com" class="link-card" target="_blank">
-      <div class="link-ico">🍩</div>
+      <div class="link-ico">&#x1F369;</div>
       <div class="link-name">Ferrara's Bakery</div>
       <div class="link-sub">Island baked goods</div>
     </a>
     <a href="https://antiquevillagewestcreek.com" class="link-card" target="_blank">
-      <div class="link-ico">🗝️</div>
+      <div class="link-ico">&#x1F5DD;&#xFE0F;</div>
       <div class="link-name">Antique Village</div>
       <div class="link-sub">West Creek antiques</div>
     </a>
     <a href="https://fantasyislandlbi.com" class="link-card" target="_blank">
-      <div class="link-ico">🎡</div>
+      <div class="link-ico">&#x1F3A1;</div>
       <div class="link-name">Fantasy Island</div>
       <div class="link-sub">Rides &amp; amusements</div>
     </a>
     <a href="https://www.claudsphotos.com" class="link-card" target="_blank">
-      <div class="link-ico">📸</div>
+      <div class="link-ico">&#x1F4F8;</div>
       <div class="link-name">Claud's Photos</div>
       <div class="link-sub">LBI photography</div>
     </a>
     <a href="https://www.sandyavocadosurf.com" class="link-card" target="_blank">
-      <div class="link-ico">🥑</div>
+      <div class="link-ico">&#x1F951;</div>
       <div class="link-name">Sandy Avocado</div>
-      <div class="link-sub">Surf shop</div>
+      <div class="link-sub">Surf camp</div>
     </a>
     <a href="https://www.skipperdipper.com" class="link-card" target="_blank">
-      <div class="link-ico">🍦</div>
+      <div class="link-ico">&#x1F366;</div>
       <div class="link-name">Skipper Dipper</div>
       <div class="link-sub">Ice cream</div>
     </a>
     <a href="https://www.birdandbettys.com/food-menu" class="link-card" target="_blank">
-      <div class="link-ico">🎶</div>
+      <div class="link-ico">&#x1F3B6;</div>
       <div class="link-name">Bird &amp; Betty's</div>
       <div class="link-sub">Food &amp; music</div>
     </a>
     <a href="https://www.daddyolbi.com" class="link-card" target="_blank">
-      <div class="link-ico">⭕️</div>
+      <div class="link-ico">&#x2B55;&#xFE0F;</div>
       <div class="link-name">Daddy O</div>
       <div class="link-sub">Hotel &amp; bar</div>
     </a>
     <a href="https://www.fariassurf.com" class="link-card" target="_blank">
-      <div class="link-ico">👙</div>
+      <div class="link-ico">&#x1F459;</div>
       <div class="link-name">Faria's Surf</div>
       <div class="link-sub">Surf &amp; beach gear</div>
     </a>
     <a href="https://jettylife.com" class="link-card" target="_blank">
-      <div class="link-ico">👕</div>
+      <div class="link-ico">&#x1F455;</div>
       <div class="link-name">Jetty Life</div>
       <div class="link-sub">Coastal apparel</div>
     </a>
@@ -485,238 +544,427 @@ footer a { color: #aaa; text-decoration: none; }
 </footer>
 
 <script>
+// ── CONFIG ──
 var STATION = '8534720';
 var LAT = 39.6515, LNG = -74.1945, TZ = 'America/New_York';
 
-function fmtDate(d) {
-  return d.toLocaleDateString('en-US', {weekday:'long',month:'long',day:'numeric',year:'numeric'});
-}
-function fmtDay(s) {
-  return new Date(s+'T12:00:00').toLocaleDateString('en-US', {weekday:'long'});
-}
-function fmtShort(s) {
-  return new Date(s+'T12:00:00').toLocaleDateString('en-US', {weekday:'short',month:'short',day:'numeric'});
-}
-function fmtTime(s) {
-  return new Date(s.replace(' ','T')).toLocaleTimeString('en-US', {hour:'numeric',minute:'2-digit',hour12:true});
-}
-function compass(d) {
-  return ['N','NE','E','SE','S','SW','W','NW'][Math.round(d/45)%8];
-}
-function noaaDate(o) {
-  var d = new Date(); d.setDate(d.getDate()+(o||0));
-  return d.toISOString().slice(0,10).replace(/-/g,'');
-}
-function moonPhase(date) {
-  var k = new Date('2024-01-11T11:57:00Z'), c = 29.53058770576;
-  return (((date-k)/86400000%c)+c)%c/c;
-}
-function moonEmoji(p) {
-  if(p<0.03||p>0.97)return'\uD83C\uDF11';
-  if(p<0.22)return'\uD83C\uDF12';
-  if(p<0.28)return'\uD83C\uDF13';
-  if(p<0.47)return'\uD83C\uDF14';
-  if(p<0.53)return'\uD83C\uDF15';
-  if(p<0.72)return'\uD83C\uDF16';
-  if(p<0.78)return'\uD83C\uDF17';
-  return'\uD83C\uDF18';
-}
-function moonName(p) {
-  if(p<0.03||p>0.97)return'New Moon';
-  if(p<0.22)return'Waxing Crescent';
-  if(p<0.28)return'First Quarter';
-  if(p<0.47)return'Waxing Gibbous';
-  if(p<0.53)return'Full Moon';
-  if(p<0.72)return'Waning Gibbous';
-  if(p<0.78)return'Last Quarter';
-  return'Waning Crescent';
-}
+// ── HELPERS ──
+function fmtDate(d) { return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}); }
+function fmtDay(s)  { return new Date(s+'T12:00:00').toLocaleDateString('en-US',{weekday:'long'}); }
+function fmtShort(s){ return new Date(s+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}); }
+function fmtTime(s) { return new Date(s.replace(' ','T')).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true}); }
+function fmtHour(s) { return new Date(s).toLocaleTimeString('en-US',{hour:'numeric',hour12:true}); }
+function compass(d) { return ['N','NE','E','SE','S','SW','W','NW'][Math.round(d/45)%8]; }
+function noaaDate(o){ var d=new Date(); d.setDate(d.getDate()+(o||0)); return d.toISOString().slice(0,10).replace(/-/g,''); }
+function moonPhase(date){ var k=new Date('2024-01-11T11:57:00Z'),c=29.53058770576; return(((date-k)/86400000%c)+c)%c/c; }
+function moonEmoji(p){ if(p<0.03||p>0.97)return'🌑'; if(p<0.22)return'🌒'; if(p<0.28)return'🌓'; if(p<0.47)return'🌔'; if(p<0.53)return'🌕'; if(p<0.72)return'🌖'; if(p<0.78)return'🌗'; return'🌘'; }
+function moonName(p){ if(p<0.03||p>0.97)return'New Moon'; if(p<0.22)return'Waxing Crescent'; if(p<0.28)return'First Quarter'; if(p<0.47)return'Waxing Gibbous'; if(p<0.53)return'Full Moon'; if(p<0.72)return'Waning Gibbous'; if(p<0.78)return'Last Quarter'; return'Waning Crescent'; }
 
+// ── iOS HOME SCREEN PROMPT ──
+(function(){
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  var isStandalone = window.navigator.standalone === true;
+  var dismissed = localStorage.getItem('iosPromptDismissed');
+  if(isIOS && !isStandalone && !dismissed){
+    document.getElementById('iosPrompt').style.display = 'block';
+  }
+})();
+
+// ── HOLIDAY / COUNTDOWN WIDGET ──
+(function(){
+  var now = new Date();
+  var y = now.getFullYear();
+
+  // Get last Monday of May (Memorial Day)
+  function memorialDay(yr){
+    var d = new Date(yr,4,31);
+    while(d.getDay()!==1) d.setDate(d.getDate()-1);
+    return d;
+  }
+  // Get nth weekday of month: nthDay(yr,5,0,3) = 3rd Sunday of June = Father's Day
+  function nthDay(yr,mo,dow,n){
+    var d=new Date(yr,mo,1),count=0;
+    while(true){ if(d.getDay()===dow){count++; if(count===n)return d;} d.setDate(d.getDate()+1); }
+  }
+  // Get first Monday of September (Labor Day)
+  function laborDay(yr){
+    var d=new Date(yr,8,1);
+    while(d.getDay()!==1) d.setDate(d.getDate()+1);
+    return d;
+  }
+
+  function getHolidays(yr){
+    var mdw = memorialDay(yr);
+    var mdwThu = new Date(mdw); mdwThu.setDate(mdw.getDate()-3); // Thursday before
+    var mdwSat = new Date(mdw); mdwSat.setDate(mdw.getDate()-2);
+    var mdwSun = new Date(mdw); mdwSun.setDate(mdw.getDate()-1);
+    var ld = laborDay(yr);
+    var ldSat = new Date(ld); ldSat.setDate(ld.getDate()-2);
+    var ldSun = new Date(ld); ldSun.setDate(ld.getDate()-1);
+    return [
+      { start: mdwThu, end: new Date(mdw.getFullYear(),mdw.getMonth(),mdw.getDate(),23,59), ico:'🎉', label:'Memorial Day Weekend', isSummer: false, countdown: true },
+      { start: nthDay(yr,5,0,3), end: null, ico:'👨', label:"Father's Day" },
+      { start: new Date(yr,6,4), end: null, ico:'🎆', label:'Fourth of July' },
+      { start: ldSat, end: new Date(ld.getFullYear(),ld.getMonth(),ld.getDate(),23,59), ico:'🌅', label:'Labor Day Weekend', isSummer: false }
+    ];
+  }
+
+  function startOfDay(d){ return new Date(d.getFullYear(),d.getMonth(),d.getDate()); }
+
+  // Find MDW Thursday for countdown target
+  function nextMDWThursday(){
+    var yr = now.getFullYear();
+    var mdw = memorialDay(yr);
+    var thu = new Date(mdw); thu.setDate(mdw.getDate()-3);
+    thu.setHours(0,0,0,0);
+    if(thu < now) { yr++; mdw = memorialDay(yr); thu = new Date(mdw); thu.setDate(mdw.getDate()-3); thu.setHours(0,0,0,0); }
+    return thu;
+  }
+
+  // Is it summer? (MDW Thursday through Labor Day Tuesday)
+  function isSummer(){
+    var yr = now.getFullYear();
+    var mdw = memorialDay(yr);
+    var thu = new Date(mdw); thu.setDate(mdw.getDate()-3); thu.setHours(0,0,0,0);
+    var ld = laborDay(yr);
+    var tue = new Date(ld); tue.setDate(ld.getDate()+1); tue.setHours(23,59,59,999);
+    return now >= thu && now <= tue;
+  }
+
+  var widget = document.getElementById('holidayWidget');
+  var hwIco  = document.getElementById('hwIco');
+  var hwText = document.getElementById('hwText');
+  widget.style.display = 'inline-flex';
+
+  var summer = isSummer();
+
+  // Check if today is a specific holiday
+  var holidays = getHolidays(y);
+  var todayHoliday = null;
+  var todayStart = startOfDay(now);
+  for(var i=0;i<holidays.length;i++){
+    var h = holidays[i];
+    var hs = startOfDay(h.start);
+    if(h.end){
+      if(now >= h.start && now <= h.end){ todayHoliday = h; break; }
+    } else {
+      if(hs.getTime() === todayStart.getTime()){ todayHoliday = h; break; }
+    }
+  }
+
+  if(todayHoliday){
+    widget.className += ' holiday';
+    hwIco.textContent = todayHoliday.ico;
+    hwText.textContent = todayHoliday.label;
+  } else if(summer){
+    widget.className += ' summer';
+    hwIco.textContent = '🌊';
+    hwText.textContent = 'Happy Summer!';
+  } else {
+    // Countdown to next MDW Thursday
+    var target = nextMDWThursday();
+    var diff = target - now;
+    var days = Math.floor(diff / (1000*60*60*24));
+    var hrs  = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    hwIco.textContent = '🗓️';
+    if(days > 0){
+      hwText.textContent = days + (days===1?' day':' days') + ' until Memorial Day Weekend';
+    } else if(hrs > 0){
+      hwText.textContent = hrs + (hrs===1?' hour':' hours') + ' until Memorial Day Weekend';
+    } else {
+      hwText.textContent = 'Memorial Day Weekend is here!';
+    }
+    // Update countdown every minute
+    setInterval(function(){
+      var d2 = nextMDWThursday() - new Date();
+      var dd = Math.floor(d2/(1000*60*60*24));
+      var dh = Math.floor((d2%(1000*60*60*24))/(1000*60*60));
+      if(dd>0) hwText.textContent = dd+(dd===1?' day':' days')+' until Memorial Day Weekend';
+      else if(dh>0) hwText.textContent = dh+(dh===1?' hour':' hours')+' until Memorial Day Weekend';
+    }, 60000);
+  }
+})();
+
+// ── DATE ──
 document.getElementById('current-date').textContent = fmtDate(new Date()).toUpperCase();
 
-async function loadAlerts() {
-  try {
+// ── ALERTS ──
+async function loadAlerts(){
+  try{
     var r = await fetch('https://api.weather.gov/alerts/active?point='+LAT+','+LNG+'&status=actual');
     var d = await r.json();
-    var kw = ['winter storm','blizzard','hurricane','tropical storm','flash flood','coastal flood','high wind','tornado','freeze','ice storm','gale','heavy snow','small craft','dense fog'];
-    var hits = (d.features||[]).filter(function(a){
-      return kw.some(function(k){ return (a.properties.event||'').toLowerCase().indexOf(k)>=0; });
-    });
+    var kw=['winter storm','blizzard','hurricane','tropical storm','flash flood','coastal flood','high wind','tornado','freeze','ice storm','gale','heavy snow','small craft','dense fog'];
+    var hits=(d.features||[]).filter(function(a){ return kw.some(function(k){ return (a.properties.event||'').toLowerCase().indexOf(k)>=0; }); });
     if(!hits.length) return;
-    var p = hits[0].properties, ev = (p.event||'').toLowerCase();
-    var b = document.getElementById('stormBanner');
-    b.style.display = 'block';
-    b.className = ev.indexOf('warning')>=0 ? 'warning' : ev.indexOf('watch')>=0 ? 'watch' : 'advisory';
-    document.getElementById('bannerText').textContent = '\u26A0\uFE0F '+p.event+': '+(p.headline||(p.description||'').slice(0,100)||'Active alert for LBI');
-  } catch(e){}
+    var p=hits[0].properties, ev=(p.event||'').toLowerCase();
+    var b=document.getElementById('stormBanner'); b.style.display='block';
+    b.className = ev.indexOf('warning')>=0?'warning':ev.indexOf('watch')>=0?'watch':'advisory';
+    document.getElementById('bannerText').textContent = '⚠️ '+p.event+': '+(p.headline||(p.description||'').slice(0,100)||'Active alert for LBI');
+  }catch(e){}
 }
 
-async function loadTides() {
-  try {
-    var url = 'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter'
+// ── TIDES ──
+async function loadTides(){
+  try{
+    var url='https://api.tidesandcurrents.noaa.gov/api/prod/datagetter'
       +'?begin_date='+noaaDate(0)+'&end_date='+noaaDate(6)
       +'&station='+STATION+'&product=predictions&datum=MLLW&time_zone=lst_ldt'
       +'&interval=hilo&units=english&application=lbitides&format=json';
-    var d = await (await fetch(url)).json();
-    var by = {};
-    (d.predictions||[]).forEach(function(p){
-      var k=p.t.slice(0,10); if(!by[k])by[k]=[]; by[k].push(p);
-    });
+    var d=await(await fetch(url)).json();
+    var by={};
+    (d.predictions||[]).forEach(function(p){ var k=p.t.slice(0,10); if(!by[k])by[k]=[]; by[k].push(p); });
     return by;
-  } catch(e){ return {}; }
+  }catch(e){ return {}; }
 }
 
-function renderTodayTides(preds) {
+function renderTodayTides(preds){
   document.getElementById('tidePills').innerHTML = preds.length
-    ? preds.map(function(p){
-        return '<div class="tide-pill'+(p.type==='L'?' low':'')+'"><div class="tp-lbl">'
-          +(p.type==='H'?'\u25B2 High':'\u25BD Low')+'</div>'
-          +'<div class="tp-time">'+fmtTime(p.t)+'</div>'
-          +'<div class="tp-ht">'+parseFloat(p.v).toFixed(1)+' ft</div></div>';
-      }).join('')
+    ? preds.map(function(p){ return '<div class="tide-pill'+(p.type==='L'?' low':'')+'"><div class="tp-lbl">'+(p.type==='H'?'▲ High':'▽ Low')+'</div><div class="tp-time">'+fmtTime(p.t)+'</div><div class="tp-ht">'+parseFloat(p.v).toFixed(1)+' ft</div></div>'; }).join('')
     : '<div class="loading">No tide data</div>';
 }
 
-function renderTimeline(preds) {
-  if(!preds.length) return;
-  var marks = preds.map(function(p,i){
-    var d = new Date(p.t.replace(' ','T'));
-    var pct = ((d.getHours()+d.getMinutes()/60)/24)*100;
-    var above = i%2===0;
-    var lbl = '<div class="tm-lbl">'+fmtTime(p.t)+'<br>'+parseFloat(p.v).toFixed(1)+'ft</div>';
+function renderTimeline(preds){
+  var el=document.getElementById('tideTimeline');
+  if(!preds.length){ el.innerHTML=''; return; }
+  var marks=preds.map(function(p,i){
+    var d=new Date(p.t.replace(' ','T'));
+    var pct=((d.getHours()+d.getMinutes()/60)/24)*100;
+    var above=i%2===0;
+    var lbl='<div class="tm-lbl">'+fmtTime(p.t)+'<br>'+parseFloat(p.v).toFixed(1)+'ft</div>';
     return '<div class="tm'+(p.type==='L'?' low':'')+(above?' above':'')
       +'" style="left:'+pct+'%">'+(above?lbl:'')
       +'<div class="tm-dot"></div>'+(above?'':lbl)+'</div>';
   }).join('');
-  document.getElementById('tideTimeline').innerHTML =
-    '<div class="tl-outer"><div class="tl-line"></div>'+marks+'</div>'
+  el.innerHTML='<div class="tl-outer"><div class="tl-line"></div>'+marks+'</div>'
     +'<div class="tl-hours"><span>12am</span><span>6am</span><span>12pm</span><span>6pm</span><span>11pm</span></div>';
 }
 
-async function loadWeather() {
-  try {
-    var r = await Promise.all([
+// ── WEATHER ──
+async function loadWeather(){
+  try{
+    var results = await Promise.all([
       fetch('https://api.open-meteo.com/v1/forecast?latitude='+LAT+'&longitude='+LNG
-        +'&current=temperature_2m,wind_speed_10m,wind_direction_10m,uv_index'
-        +'&daily=temperature_2m_max,temperature_2m_min,wind_speed_10m_max,uv_index_max'
+        +'&current=temperature_2m,wind_speed_10m,wind_direction_10m,uv_index,precipitation'
+        +'&hourly=precipitation_probability,temperature_2m'
+        +'&daily=temperature_2m_max,temperature_2m_min,wind_speed_10m_max,uv_index_max,sunrise,sunset,precipitation_sum'
         +'&timezone='+TZ+'&forecast_days=7&temperature_unit=fahrenheit&wind_speed_unit=mph').then(function(r){return r.json();}),
       fetch('https://marine-api.open-meteo.com/v1/marine?latitude='+LAT+'&longitude='+LNG
         +'&current=wave_height,wave_period,sea_surface_temperature'
         +'&daily=wave_height_max,wave_period_max,sea_surface_temperature_max'
         +'&timezone='+TZ+'&forecast_days=7').then(function(r){return r.json();})
     ]);
-    return {w:r[0],m:r[1]};
-  } catch(e){ return null; }
+    return {w:results[0], m:results[1]};
+  }catch(e){ return null; }
 }
 
-function renderWeather(w,m) {
+function renderWeather(w, m){
   var c=w.current, mc=m.current;
-  function v(x){ return x!=null?x:'--'; }
-  var wh = mc&&mc.wave_height!=null ? (mc.wave_height*3.281).toFixed(1) : '--';
-  var wp = mc&&mc.wave_period!=null ? mc.wave_period.toFixed(0) : '--';
-  var wt = mc&&mc.sea_surface_temperature!=null ? (mc.sea_surface_temperature*9/5+32).toFixed(0) : '--';
-  function sb(ico,lbl,val,unit){
-    return '<div class="sblock"><div class="sb-ico">'+ico+'</div><div class="sb-lbl">'+lbl+'</div>'
-      +'<div class="sb-val">'+val+'<span class="sb-unit">'+(unit?' '+unit:'')+'</span></div></div>';
-  }
+  var wh=mc&&mc.wave_height!=null?(mc.wave_height*3.281).toFixed(1):'--';
+  var wp=mc&&mc.wave_period!=null?mc.wave_period.toFixed(0):'--';
+  var wt=mc&&mc.sea_surface_temperature!=null?(mc.sea_surface_temperature*9/5+32).toFixed(0):'--';
+  function sb(ico,lbl,val,unit){ return '<div class="sblock"><div class="sb-ico">'+ico+'</div><div class="sb-lbl">'+lbl+'</div><div class="sb-val">'+val+'<span class="sb-unit">'+(unit?' '+unit:'')+'</span></div></div>'; }
   document.getElementById('weatherStats').innerHTML =
-    sb('\uD83C\uDF21\uFE0F','Air Temp', c.temperature_2m!=null?c.temperature_2m.toFixed(0):'--', '\u00B0F')
-    +sb('\uD83D\uDCA7','Water', wt, '\u00B0F')
-    +sb('\uD83C\uDF0A','Waves', wh, 'ft')
-    +sb('\u23F1\uFE0F','Period', wp, 's')
-    +sb('\uD83D\uDCA8','Wind', c.wind_speed_10m!=null?c.wind_speed_10m.toFixed(0):'--', 'mph '+compass(c.wind_direction_10m||0))
-    +sb('\uD83D\uDD06','UV', c.uv_index!=null?c.uv_index.toFixed(0):'--', '');
+    sb('🌡️','Air Temp', c.temperature_2m!=null?c.temperature_2m.toFixed(0):'--','°F')
+    +sb('💧','Water', wt,'°F')
+    +sb('🌊','Waves', wh,'ft')
+    +sb('⏱️','Period', wp,'s')
+    +sb('💨','Wind', c.wind_speed_10m!=null?c.wind_speed_10m.toFixed(0)+'mph '+compass(c.wind_direction_10m||0):'--','')
+    +sb('🔆','UV', c.uv_index!=null?c.uv_index.toFixed(0):'--','');
 }
 
-function renderMoon() {
-  var phase = moonPhase(new Date());
-  var pct = Math.round(phase*100);
-  var illum = phase<0.5 ? Math.round(phase*2*100) : Math.round((1-phase)*2*100);
-  document.getElementById('moonDisplay').innerHTML =
+function renderSunRow(w){
+  var sr = document.getElementById('sunRow');
+  var sunrise='--', sunset='--';
+  if(w.daily&&w.daily.sunrise&&w.daily.sunrise[0]){
+    sunrise = new Date(w.daily.sunrise[0]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});
+    sunset  = new Date(w.daily.sunset[0]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});
+  }
+  sr.innerHTML =
+    '<div class="sun-pill"><div class="sun-lbl">🌅 Sunrise</div><div class="sun-val">'+sunrise+'</div></div>'
+    +'<div class="sun-pill"><div class="sun-lbl">🌇 Sunset</div><div class="sun-val">'+sunset+'</div></div>';
+}
+
+function renderMoon(){
+  var phase=moonPhase(new Date());
+  var pct=Math.round(phase*100);
+  var illum=phase<0.5?Math.round(phase*2*100):Math.round((1-phase)*2*100);
+  document.getElementById('moonDisplay').innerHTML=
     '<div class="moon-ico">'+moonEmoji(phase)+'</div>'
-    +'<div class="moon-info"><div class="moon-name">'+moonName(phase)+'</div>'
-    +'<div class="moon-det">'+illum+'% illuminated</div></div>'
+    +'<div class="moon-info"><div class="moon-name">'+moonName(phase)+'</div><div class="moon-det">'+illum+'% illuminated</div></div>'
     +'<div class="moon-bar-wrap"><div class="moon-bar-lbl">Lunar Cycle</div>'
     +'<div class="moon-bar"><div class="moon-fill" style="width:'+pct+'%"></div></div>'
     +'<div class="moon-day">Day '+Math.round(phase*29.5)+' of 29.5</div></div>';
   return phase;
 }
 
-function buildSummary(tides,wd,md,phase) {
-  var parts=[], tags=[];
-  if(tides.length){ var f=tides[0]; parts.push((f.type==='H'?'High':'Low')+' tide at '+fmtTime(f.t)); }
-  var mc = md&&md.current;
-  if(mc&&mc.wave_height!=null){
-    var wh=(mc.wave_height*3.281).toFixed(1), wf=parseFloat(wh);
-    if(wf<1){parts.push('glassy flat conditions');tags.push('Calm Water');}
-    else if(wf<2){parts.push(wh+'ft \u2014 gentle surf');tags.push('Easy Surf');}
-    else if(wf<4){parts.push(wh+'ft waves');tags.push('Good Surf');}
-    else{parts.push(wh+'ft \u2014 solid swell');tags.push('Big Surf');}
+// ── RAIN WINDOW ──
+function getRainWindow(w){
+  if(!w||!w.hourly||!w.hourly.precipitation_probability) return null;
+  var probs = w.hourly.precipitation_probability;
+  var times = w.hourly.time;
+  var todayStr = new Date().toISOString().slice(0,10);
+  var start=null, end=null;
+  for(var i=0;i<times.length;i++){
+    if(times[i].slice(0,10)!==todayStr) continue;
+    if(probs[i]>=40){
+      if(start===null) start=times[i];
+      end=times[i];
+    }
   }
-  var wc = wd&&wd.current;
-  if(wc&&wc.wind_speed_10m!=null){
-    if(wc.wind_speed_10m<10)tags.push('Light Winds');
-    else if(wc.wind_speed_10m<20)tags.push('Moderate Winds');
-    else tags.push('Windy');
-  }
-  var mn = moonName(phase);
-  if(mn==='Full Moon'||mn==='New Moon'){parts.push(mn+' \u2014 king tides tonight');tags.push('Strong Tides');}
-  if(wc&&wc.uv_index>=8)tags.push('High UV');
-  if(!parts.length)parts.push('Check conditions below for Long Beach Island');
-  if(!tags.length){tags.push('LBI');tags.push('Beach');}
-  document.getElementById('summaryText').textContent = parts.join(' \u00B7 ')+'.';
-  document.getElementById('summaryTags').innerHTML = tags.map(function(t){return'<span class="tag">'+t+'</span>';}).join('');
+  if(start===null) return null;
+  return { start: fmtHour(start), end: fmtHour(end) };
 }
 
-function buildForecast(byDate,w,m) {
-  var dates = Object.keys(byDate).sort().slice(0,7);
+// ── DAY AT A GLANCE ──
+function buildSummary(tides, wData, mData, phase, rainWin){
+  var parts=[], tags=[];
+  var now=new Date();
+  var month=now.getMonth(); // 0=Jan
+  var isWinter=(month<=1||month>=11);
+  var isSummer=(month>=5&&month<=8);
+
+  // Air temp
+  var wc=wData&&wData.current;
+  if(wc&&wc.temperature_2m!=null){
+    parts.push('Air temp '+wc.temperature_2m.toFixed(0)+'°F');
+  }
+
+  // Tides - always relevant
+  if(tides&&tides.length){
+    var upcoming = tides.filter(function(t){ return new Date(t.t.replace(' ','T'))>now; });
+    if(upcoming.length){
+      var next=upcoming[0];
+      parts.push((next.type==='H'?'High':'Low')+' tide at '+fmtTime(next.t)+' ('+parseFloat(next.v).toFixed(1)+'ft)');
+    }
+  }
+
+  // Waves - always relevant
+  var mc=mData&&mData.current;
+  if(mc&&mc.wave_height!=null){
+    var wh=(mc.wave_height*3.281).toFixed(1), wf=parseFloat(wh);
+    var wp=mc.wave_period!=null?' with '+mc.wave_period.toFixed(0)+'s period':'';
+    if(wf<1){ parts.push('Flat calm — glassy water'+wp); tags.push('Calm Water'); }
+    else if(wf<2){ parts.push(wh+'ft gentle surf'+wp); tags.push('Easy Surf'); }
+    else if(wf<4){ parts.push(wh+'ft waves'+wp); tags.push('Good Surf'); }
+    else { parts.push(wh+'ft solid swell'+wp); tags.push('Big Surf'); }
+  }
+
+  // Water temp - always relevant at beach
+  if(mc&&mc.sea_surface_temperature!=null){
+    var wtf=(mc.sea_surface_temperature*9/5+32).toFixed(0);
+    parts.push('Water '+wtf+'°F');
+    if(parseFloat(wtf)>=68) tags.push('Swimmable');
+    else if(parseFloat(wtf)>=60) tags.push('Cool Water');
+    else tags.push('Cold Water');
+  }
+
+  // Wind
+  if(wc&&wc.wind_speed_10m!=null){
+    var ws=wc.wind_speed_10m;
+    if(ws<8){ tags.push('Light Winds'); }
+    else if(ws<18){ parts.push('Winds '+ws.toFixed(0)+'mph '+compass(wc.wind_direction_10m||0)); tags.push('Moderate Winds'); }
+    else { parts.push('Winds '+ws.toFixed(0)+'mph '+compass(wc.wind_direction_10m||0)+' — breezy'); tags.push('Windy'); }
+  }
+
+  // UV — more relevant in summer, deprioritize in winter
+  if(wc&&wc.uv_index!=null&&!isWinter){
+    var uv=wc.uv_index;
+    if(uv>=8){ parts.push('UV index '+uv.toFixed(0)+' — wear sunscreen'); tags.push('High UV ☀️'); }
+    else if(uv>=5&&isSummer){ parts.push('UV index '+uv.toFixed(0)); tags.push('Moderate UV'); }
+  }
+
+  // Rain window
+  if(rainWin){ parts.push('Rain expected '+rainWin.start+' – '+rainWin.end); tags.push('Rain Expected 🌧️'); }
+
+  // Moon - tides relevant on full/new
+  var mn=moonName(phase);
+  if(mn==='Full Moon'||mn==='New Moon'){
+    parts.push(mn+' tonight — king tides likely');
+    tags.push('King Tides');
+    tags.push('Good Fishing');
+  }
+
+  if(!parts.length) parts.push('Checking conditions for Long Beach Island');
+  if(!tags.length) tags.push('LBI');
+
+  document.getElementById('summaryText').textContent = parts.join(' · ')+'.';
+  document.getElementById('summaryTags').innerHTML = tags.map(function(t){ return '<span class="tag">'+t+'</span>'; }).join('');
+}
+
+// ── 7-DAY FORECAST ──
+function buildForecast(byDate, w, m){
+  var dates=Object.keys(byDate).sort().slice(0,7);
   var wd=w.daily, md=m.daily;
   var html='';
   dates.forEach(function(ds,i){
     var today=i===0, tides=byDate[ds]||[];
     var ph=moonPhase(new Date(ds+'T12:00:00'));
-    function gw(arr,i,mult,dec){ return arr&&arr[i]!=null?(arr[i]*(mult||1)).toFixed(dec||0):null; }
+    function gw(arr,idx,mult,dec){ return arr&&arr[idx]!=null?(arr[idx]*(mult||1)).toFixed(dec||0):null; }
     var hi   = gw(wd.temperature_2m_max,i,1,0);
     var lo   = gw(wd.temperature_2m_min,i,1,0);
     var wh   = gw(md.wave_height_max,i,3.281,1);
     var wp   = gw(md.wave_period_max,i,1,0);
-    var wt   = md.sea_surface_temperature_max&&md.sea_surface_temperature_max[i]!=null
-                 ? (md.sea_surface_temperature_max[i]*9/5+32).toFixed(0) : null;
+    var wt   = md.sea_surface_temperature_max&&md.sea_surface_temperature_max[i]!=null?(md.sea_surface_temperature_max[i]*9/5+32).toFixed(0):null;
     var wind = gw(wd.wind_speed_10m_max,i,1,0);
     var uv   = gw(wd.uv_index_max,i,1,0);
+    var rise = wd.sunrise&&wd.sunrise[i]?new Date(wd.sunrise[i]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true}):null;
+    var set  = wd.sunset&&wd.sunset[i]?new Date(wd.sunset[i]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true}):null;
+
     function ds2(l,v,u){ return '<div class="dstat"><div class="dl">'+l+'</div><div class="dv">'+(v||'--')+(v&&u?'<span class="du"> '+u+'</span>':'')+' </div></div>'; }
-    var tideH = tides.map(function(p){
-      return '<div class="mpill'+(p.type==='L'?' low':'')+'"><div class="ml">'
-        +(p.type==='H'?'\u25B2 High':'\u25BD Low')+'</div>'
-        +'<div class="mt">'+fmtTime(p.t)+'</div>'
-        +'<div class="mh">'+parseFloat(p.v).toFixed(1)+'ft</div></div>';
+
+    var tideHtml=tides.map(function(p){
+      return '<div class="mpill'+(p.type==='L'?' low':'')+'"><div class="ml">'+(p.type==='H'?'▲ High':'▽ Low')+'</div><div class="mt">'+fmtTime(p.t)+'</div><div class="mh">'+parseFloat(p.v).toFixed(1)+'ft</div></div>';
     }).join('');
-    html += '<div class="day-card'+(today?' today':'')+'"><div class="day-hdr">'
+
+    var sunHtml='';
+    if(rise&&set){
+      sunHtml='<div class="day-sun-row">'
+        +'<div class="day-sun-pill"><div class="dsl">🌅 Sunrise</div><div class="dsv">'+rise+'</div></div>'
+        +'<div class="day-sun-pill"><div class="dsl">🌇 Sunset</div><div class="dsv">'+set+'</div></div>'
+        +'<div class="day-sun-pill"><div class="dsl">Moon</div><div class="dsv" style="font-size:1.1rem">'+moonEmoji(ph)+'</div><div class="du">'+moonName(ph).replace(' Moon','')+'</div></div>'
+        +'</div>';
+    }
+
+    html+='<div class="day-card'+(today?' today':'')+'"><div class="day-hdr">'
       +'<div class="day-name">'+(today?'Today':fmtDay(ds))+'</div>'
       +'<div class="day-dt">'+fmtShort(ds)+'</div></div>'
       +'<div class="day-grid">'
       +ds2('High',hi,'°F')+ds2('Low',lo,'°F')
       +ds2('🌊 Waves',wh,'ft')+ds2('⏱️ Period',wp,'s')
-      +ds2('💧 Water',wt,'°F')+ds2('💨 Wind',wind,'mph')+ds2('🔆 UV',uv,'')
-      +'<div class="dstat"><div class="dl">Moon</div><div class="dv" style="font-size:1.05rem;line-height:1.3">'
-      +moonEmoji(ph)+'</div><div class="du">'+moonName(ph).replace(' Moon','')+'</div></div>'
-      +'</div><div class="day-tides">'+tideH+'</div></div>';
+      +ds2('💧 Water',wt,'°F')+ds2('💨 Wind',wind,'mph')
+      +ds2('🔆 UV',uv,'')
+      +'</div>'
+      +(tideHtml?'<div class="day-tides">'+tideHtml+'</div>':'')
+      +sunHtml
+      +'</div>';
   });
-  document.getElementById('forecastDays').innerHTML = html;
+  document.getElementById('forecastDays').innerHTML=html;
 }
 
-async function init() {
+// ── INIT ──
+async function init(){
   document.getElementById('current-date').textContent = fmtDate(new Date()).toUpperCase();
   var results = await Promise.all([loadTides(), loadWeather()]);
-  var byDate = results[0], weather = results[1];
-  var today = new Date().toISOString().slice(0,10);
-  var todayTides = byDate[today]||[];
+  var byDate=results[0], weather=results[1];
+  var today=new Date().toISOString().slice(0,10);
+  var todayTides=byDate[today]||[];
+
   renderTodayTides(todayTides);
   renderTimeline(todayTides);
-  if(weather) renderWeather(weather.w, weather.m);
-  var phase = renderMoon();
-  buildSummary(todayTides, weather&&weather.w, weather&&weather.m, phase);
-  if(weather && Object.keys(byDate).length) buildForecast(byDate, weather.w, weather.m);
+
+  if(weather){
+    renderWeather(weather.w, weather.m);
+    renderSunRow(weather.w);
+  }
+
+  var phase=renderMoon();
+  var rainWin = weather ? getRainWindow(weather.w) : null;
+  buildSummary(todayTides, weather&&weather.w, weather&&weather.m, phase, rainWin);
+
+  if(weather && Object.keys(byDate).length){
+    buildForecast(byDate, weather.w, weather.m);
+  }
+
   loadAlerts();
 }
 
